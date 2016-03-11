@@ -29,5 +29,10 @@ java -version
 ##### Login to 
 * https://access.redhat.com/
 
-##### Download 
-* http://www.jboss.org/products/eap/download/
+##### Download Application Platform 5.1.0 Binary Installer
+* https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=5.1.0
+* https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=4093&product=appplatform&version=5.1.0&downloadType=distributions
+
+
+
+
