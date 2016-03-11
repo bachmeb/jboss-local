@@ -56,7 +56,11 @@ Set JAVA_HOME to the directory of your local JDK to avoid this message.
 
   JAVA: java
 
-  JAVA_OPTS: -Xms1303m -Xmx1303m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warni                                                        ng=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=                                                      3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -Dsun.rmi.dgc.client.gcInte                                                      rval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dorg.jboss.resolver.warnin                                                      g=true -Dprogram.name=run.bat -server
+  JAVA_OPTS: -Xms1303m -Xmx1303m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warni
+  ng=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=
+  3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -Dsun.rmi.dgc.client.gcInte
+  rval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dorg.jboss.resolver.warnin
+  g=true -Dprogram.name=run.bat -server
 
   CLASSPATH: C:\DEV\jboss\eap\5.1.0\jboss-as\bin\run.jar
 
