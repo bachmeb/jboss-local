@@ -1,4 +1,4 @@
-# jboss 5.1.0 eap win7.64
+# jboss eap 5.1.0 win7 64-bit
 
 ## References
 * https://access.redhat.com/articles/113083#Cert_5
