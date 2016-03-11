@@ -29,9 +29,8 @@ java -version
 ##### Login to the Red Hat Customer Portal
 * https://access.redhat.com/
 
-##### Download Application Platform 5.1.0 Binary Installer
-* https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=5.1.0
-* https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=4093&product=appplatform&version=5.1.0&downloadType=distributions
+##### Download Application Platform 5.1.0 Binary (jboss-eap-5.1.0.zip)
+* https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=4063&product=appplatform&version=5.1.0&downloadType=distributions
 
 
 
