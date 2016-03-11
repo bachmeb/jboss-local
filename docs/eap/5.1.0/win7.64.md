@@ -40,11 +40,9 @@ java -version
 * Start > Control Panel > System > Advanced System Settings > Environment Variables > System Variables > Path > Edit
 * Append the following: $DEV\java\6\64\jdk1.6.0_45\bin;
 
-##### Start JBoss
+##### Start JBoss from the Windows command line
 	$JBOSS_HOME\bin\run.bat
 ```
-
-$ ./run.bat
 Calling C:\DEV\jboss\eap\5.1.0\jboss-as\bin\run.conf.bat
 JAVA_HOME is not set. Unexpected results may occur.
 Set JAVA_HOME to the directory of your local JDK to avoid this message.
