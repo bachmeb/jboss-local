@@ -180,3 +180,9 @@ admin=admin
 16:35:48,308 INFO  [BootstrapAction] Initializing Administration Console v1.3.4.SP1...
 16:35:54,577 INFO  [PluginContainerResourceManager] Discovering Resources...
 ```
+
+##### Go to the JMX console
+* http://localhost:8080/jmx-console/
+
+##### Login with the admin credentials
+* admin/admin
