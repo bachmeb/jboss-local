@@ -4,6 +4,7 @@
 * https://access.redhat.com/articles/113083#Cert_5
 * https://access.redhat.com/articles/111663
 * http://jbossas.jboss.org/downloads
+* https://access.redhat.com/articles/112673
 
 In this tutorial $DEV refers to C:\DEV\ on my system. For consistency, you can choose any folder you like to be your DEV folder. 
 
@@ -25,4 +26,8 @@ In this tutorial $DEV refers to C:\DEV\ on my system. For consistency, you can c
 java -version
 ```
 
+##### Login to 
+* https://access.redhat.com/
+
 ##### Download 
+* http://www.jboss.org/products/eap/download/
