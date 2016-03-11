@@ -54,15 +54,98 @@ Set JAVA_HOME to the directory of your local JDK to avoid this message.
 
   JAVA: java
 
-  JAVA_OPTS: -Xms1303m -Xmx1303m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warni
-  ng=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=
-  3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -Dsun.rmi.dgc.client.gcInte
-  rval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dorg.jboss.resolver.warnin
-  g=true -Dprogram.name=run.bat -server
+  JAVA_OPTS: -Xms1303m -Xmx1303m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dorg.jboss.resolver.warning=true -Dprogram.name=run.bat -server
 
   CLASSPATH: C:\DEV\jboss\eap\5.1.0\jboss-as\bin\run.jar
 
 ===============================================================================
+
+16:04:25,555 INFO  [ServerImpl] Starting JBoss (Microcontainer)...
+16:04:25,557 INFO  [ServerImpl] Release ID: JBoss [EAP] 5.1.0 (build: SVNTag=JBPAPP_5_1_0 date=201009150028)
+16:04:25,557 INFO  [ServerImpl] Bootstrap URL: null
+16:04:25,557 INFO  [ServerImpl] Home Dir: C:\DEV\jboss\eap\5.1.0\jboss-as
+16:04:25,557 INFO  [ServerImpl] Home URL: file:/C:/DEV/jboss/eap/5.1.0/jboss-as/
+16:04:25,557 INFO  [ServerImpl] Library URL: file:/C:/DEV/jboss/eap/5.1.0/jboss-as/lib/
+16:04:25,558 INFO  [ServerImpl] Patch URL: null
+16:04:25,559 INFO  [ServerImpl] Common Base URL: file:/C:/DEV/jboss/eap/5.1.0/jboss-as/common/
+16:04:25,559 INFO  [ServerImpl] Common Library URL: file:/C:/DEV/jboss/eap/5.1.0/jboss-as/common/lib/
+16:04:25,559 INFO  [ServerImpl] Server Name: default
+16:04:25,559 INFO  [ServerImpl] Server Base Dir: C:\DEV\jboss\eap\5.1.0\jboss-as\server
+16:04:25,559 INFO  [ServerImpl] Server Base URL: file:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/
+16:04:25,559 INFO  [ServerImpl] Server Config URL: file:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/conf/
+16:04:25,559 INFO  [ServerImpl] Server Home Dir: C:\DEV\jboss\eap\5.1.0\jboss-as\server\default
+16:04:25,560 INFO  [ServerImpl] Server Home URL: file:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/
+16:04:25,560 INFO  [ServerImpl] Server Data Dir: C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\data
+16:04:25,560 INFO  [ServerImpl] Server Library URL: file:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/lib/
+16:04:25,560 INFO  [ServerImpl] Server Log Dir: C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\log
+16:04:25,560 INFO  [ServerImpl] Server Native Dir: C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\tmp\native
+16:04:25,561 INFO  [ServerImpl] Server Temp Dir: C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\tmp
+16:04:25,561 INFO  [ServerImpl] Server Temp Deploy Dir: C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\tmp\deploy
+16:04:26,411 INFO  [ServerImpl] Starting Microcontainer, bootstrapURL=file:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/conf/bootstrap.xml
+16:04:27,068 INFO  [VFSCacheFactory] Initializing VFSCache [org.jboss.virtual.plugins.cache.CombinedVFSCache]
+16:04:27,072 INFO  [VFSCacheFactory] Using VFSCache [CombinedVFSCache[real-cache: null]]
+16:04:27,411 INFO  [CopyMechanism] VFS temp dir: C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\tmp
+16:04:27,412 INFO  [ZipEntryContext] VFS force nested jars copy-mode is enabled.
+16:04:29,035 INFO  [ServerInfo] Java version: 1.6.0_45,Sun Microsystems Inc.
+16:04:29,035 INFO  [ServerInfo] Java Runtime: Java(TM) SE Runtime Environment (build 1.6.0_45-b06)
+16:04:29,035 INFO  [ServerInfo] Java VM: Java HotSpot(TM) 64-Bit Server VM 20.45-b01,Sun Microsystems Inc.
+16:04:29,036 INFO  [ServerInfo] OS-System: Windows 7 6.1,amd64
+16:04:29,037 INFO  [ServerInfo] VM arguments: -Xms1303m -Xmx1303m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dorg.jboss.resolver.warning=true -Dprogram.name=run.bat -Djava.endorsed.dirs=C:\DEV\jboss\eap\5.1.0\jboss-as\lib\endorsed
+16:04:29,078 INFO  [JMXKernel] Legacy JMX core initialized
+16:04:34,850 INFO  [WebService] Using RMI server codebase: http://127.0.0.1:8083/
+16:04:39,885 INFO  [NativeServerConfig] JBoss Web Services - Stack Native Core
+16:04:39,885 INFO  [NativeServerConfig] 3.1.2.SP7
+16:04:41,626 INFO  [LogNotificationListener] Adding notification listener for logging mbean "jboss.system:service=Logging,type=Log4jService" to server org.jboss.mx.server.MBeanServerImpl@7f0eeb26[ defaultDomain='jboss' ]
+16:04:50,560 INFO  [MailService] Mail Service bound to java:/Mail
+16:04:52,089 WARN  [JBossASSecurityMetadataStore] WARNING! POTENTIAL SECURITY RISK. It has been detected that the MessageSucker component which sucks messages from one node to another has not had its password changed from the installation default. Please see the JBoss Messaging user guide for instructions on how to do this.
+16:04:54,152 INFO  [TransactionManagerService] JBossTS Transaction Service (JTA version - tag:JBOSSTS_4_6_1_GA_CP07) - JBoss Inc.
+16:04:54,153 INFO  [TransactionManagerService] Setting up property manager MBean and JMX layer
+16:04:54,672 INFO  [TransactionManagerService] Initializing recovery manager
+16:04:54,835 INFO  [TransactionManagerService] Recovery manager configured
+16:04:54,835 INFO  [TransactionManagerService] Binding TransactionManager JNDI Reference
+16:04:54,886 INFO  [TransactionManagerService] Starting transaction recovery manager
+16:04:55,413 INFO  [AprLifecycleListener] The Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\DEV\java\6\64\jdk1.6.0_45\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\bbachmey\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\bbachmey\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\DEV\gradle\gradle-2.8\bin;C:\DEV\ant\apache-ant-1.9.6\bin;C:\DEV\java\6\64\jdk1.6.0_45\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;.
+16:04:55,483 INFO  [Http11Protocol] Initializing Coyote HTTP/1.1 on http-127.0.0.1-8080
+16:04:55,484 INFO  [AjpProtocol] Initializing Coyote AJP/1.3 on ajp-127.0.0.1-8009
+16:04:55,514 INFO  [StandardService] Starting service jboss.web
+16:04:55,517 INFO  [StandardEngine] Starting Servlet Engine: JBoss Web/2.1.10
+16:04:55,585 INFO  [Catalina] Server startup in 100 ms
+16:04:55,606 INFO  [TomcatDeployment] deploy, ctxPath=/web-console
+16:04:56,636 INFO  [TomcatDeployment] deploy, ctxPath=/invoker
+16:04:56,707 INFO  [TomcatDeployment] deploy, ctxPath=/jbossws
+16:04:56,831 INFO  [RARDeployment] Required license terms exist, view vfsfile:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/deploy/jboss-local-jdbc.rar/META-INF/ra.xml
+16:04:56,849 INFO  [RARDeployment] Required license terms exist, view vfsfile:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/deploy/jboss-xa-jdbc.rar/META-INF/ra.xml
+16:04:56,864 INFO  [RARDeployment] Required license terms exist, view vfsfile:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/deploy/jms-ra.rar/META-INF/ra.xml
+16:04:56,883 INFO  [RARDeployment] Required license terms exist, view vfsfile:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/deploy/mail-ra.rar/META-INF/ra.xml
+16:04:56,913 INFO  [RARDeployment] Required license terms exist, view vfsfile:/C:/DEV/jboss/eap/5.1.0/jboss-as/server/default/deploy/quartz-ra.rar/META-INF/ra.xml
+16:04:57,049 INFO  [SimpleThreadPool] Job execution threads will use class loader of thread: main
+16:04:57,092 INFO  [QuartzScheduler] Quartz Scheduler v.1.5.2 created.
+16:04:57,097 INFO  [RAMJobStore] RAMJobStore initialized.
+16:04:57,097 INFO  [StdSchedulerFactory] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+16:04:57,097 INFO  [StdSchedulerFactory] Quartz scheduler version: 1.5.2
+16:04:57,101 INFO  [QuartzScheduler] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+16:04:57,908 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=DataSourceBinding,name=DefaultDS' to JNDI name 'java:DefaultDS'
+16:04:58,571 INFO  [ServerPeer] JBoss Messaging 1.4.7.GA server [0] started
+16:04:58,711 INFO  [QueueService] Queue[/queue/ExpiryQueue] started, fullSize=200000, pageSize=2000, downCacheSize=2000
+16:04:58,713 INFO  [QueueService] Queue[/queue/DLQ] started, fullSize=200000, pageSize=2000, downCacheSize=2000
+16:04:58,841 INFO  [ConnectionFactory] Connector bisocket://127.0.0.1:4457 has leasing enabled, lease period 10000 milliseconds
+16:04:58,841 INFO  [ConnectionFactory] org.jboss.jms.server.connectionfactory.ConnectionFactory@6ffb75c7 started
+16:04:58,842 INFO  [ConnectionFactoryJNDIMapper] supportsFailover attribute is true on connection factory: jboss.messaging.connectionfactory:service=ClusteredConnectionFactory but post office is non clustered. So connection factory will *not* support failover
+16:04:58,842 INFO  [ConnectionFactoryJNDIMapper] supportsLoadBalancing attribute is true on connection factory: jboss.messaging.connectionfactory:service=ClusteredConnectionFactory but post office is non clustered. So connection factory will *not* support load balancing
+16:04:58,843 INFO  [ConnectionFactory] Connector bisocket://127.0.0.1:4457 has leasing enabled, lease period 10000 milliseconds
+16:04:58,844 INFO  [ConnectionFactory] org.jboss.jms.server.connectionfactory.ConnectionFactory@44e00985 started
+16:04:58,844 INFO  [ConnectionFactory] Connector bisocket://127.0.0.1:4457 has leasing enabled, lease period 10000 milliseconds
+16:04:58,845 INFO  [ConnectionFactory] org.jboss.jms.server.connectionfactory.ConnectionFactory@6bb9ae1a started
+16:04:59,043 INFO  [ConnectionFactoryBindingService] Bound ConnectionManager 'jboss.jca:service=ConnectionFactoryBinding,name=JmsXA' to JNDI name 'java:JmsXA'
+16:04:59,253 INFO  [TomcatDeployment] deploy, ctxPath=/admin-console
+16:04:59,404 INFO  [config] Initializing Mojarra (1.2_13-b01-FCS) for context '/admin-console'
+16:05:03,372 INFO  [TomcatDeployment] deploy, ctxPath=/
+16:05:03,435 INFO  [TomcatDeployment] deploy, ctxPath=/jmx-console
+16:05:03,609 INFO  [ProfileServiceBootstrap] Loading profile: ProfileKey@6eb92a0e[domain=default, server=default, name=default]
+16:05:03,624 INFO  [Http11Protocol] Starting Coyote HTTP/1.1 on http-127.0.0.1-8080
+16:05:03,648 INFO  [AjpProtocol] Starting Coyote AJP/1.3 on ajp-127.0.0.1-8009
+16:05:03,656 INFO  [ServerImpl] JBoss (Microcontainer) [5.1.0 (build: SVNTag=JBPAPP_5_1_0 date=201009150028)] Started in 38s:92ms
+
 ```
 ##### Stop JBoss
 	ctrl-c
