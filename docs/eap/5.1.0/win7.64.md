@@ -6,6 +6,7 @@
 * http://jbossas.jboss.org/downloads
 * https://access.redhat.com/articles/112673
 * http://hiplab.mc.vanderbilt.edu/projects/soempi/jboss_startstop.html
+* http://stackoverflow.com/questions/5415608/jboss-default-password
 
 In this tutorial $DEV refers to C:\DEV\ on my system. For consistency, you can choose any folder you like to be your DEV folder. 
 
@@ -151,5 +152,11 @@ Set JAVA_HOME to the directory of your local JDK to avoid this message.
 ##### Go to the JBoss welcome page
 * http://localhost:8080/
 
+##### Enable the admin username and password for the JBoss EAP Admin Console
+* $DEV\jboss\eap\5.1.0\jboss-as\server\default\deploy\management\console-mgr.sar\web-console.war\WEB-INF\classes\web-console-users.properties
+```
+# A sample users.properties file for use with the UsersRolesLoginModule
+admin=admin
+```
 ##### Stop JBoss
 	ctrl-c
