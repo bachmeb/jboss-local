@@ -26,7 +26,7 @@ In this tutorial $DEV refers to C:\DEV\ on my system. For consistency, you can c
 java -version
 ```
 
-##### Login to 
+##### Login to the Red Hat Customer Portal
 * https://access.redhat.com/
 
 ##### Download Application Platform 5.1.0 Binary Installer
