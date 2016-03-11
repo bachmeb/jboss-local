@@ -5,6 +5,7 @@
 * https://access.redhat.com/articles/111663
 * http://jbossas.jboss.org/downloads
 * https://access.redhat.com/articles/112673
+* http://hiplab.mc.vanderbilt.edu/projects/soempi/jboss_startstop.html
 
 In this tutorial $DEV refers to C:\DEV\ on my system. For consistency, you can choose any folder you like to be your DEV folder. 
 
@@ -32,6 +33,11 @@ java -version
 ##### Download Application Platform 5.1.0 Binary (jboss-eap-5.1.0.zip)
 * https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=4063&product=appplatform&version=5.1.0&downloadType=distributions
 
+##### Extract the contents of jboss-eap-5.1.0.zip
+* Target: $DEV\jboss\eap\5.1.0
 
+##### Start JBoss
+	$JBOSS_HOME\bin\run.bat
 
-
+##### Stop JBoss
+	ctrl-c
