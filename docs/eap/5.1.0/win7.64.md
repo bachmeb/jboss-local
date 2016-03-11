@@ -147,5 +147,9 @@ Set JAVA_HOME to the directory of your local JDK to avoid this message.
 16:05:03,656 INFO  [ServerImpl] JBoss (Microcontainer) [5.1.0 (build: SVNTag=JBPAPP_5_1_0 date=201009150028)] Started in 38s:92ms
 
 ```
+
+##### Go to the JBoss welcome page
+* http://localhost:8080/
+
 ##### Stop JBoss
 	ctrl-c
