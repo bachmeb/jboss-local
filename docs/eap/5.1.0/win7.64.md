@@ -158,5 +158,25 @@ Set JAVA_HOME to the directory of your local JDK to avoid this message.
 # A sample users.properties file for use with the UsersRolesLoginModule
 admin=admin
 ```
+* Edit $DEV\jboss\eap\5.1.0\jboss-as\server\default\conf\props\jmx-console-users.properties
+```
+# A sample users.properties file for use with the UsersRolesLoginModule
+admin=admin
+```
+
 ##### Stop JBoss
 	ctrl-c
+
+##### Restart JBoss
+	$JBOSS_HOME\bin\run.bat
+
+##### Go to the admin console
+* http://localhost:8080/admin-console/
+
+##### Login with the admin credentials
+* admin/admin
+
+```
+16:35:48,308 INFO  [BootstrapAction] Initializing Administration Console v1.3.4.SP1...
+16:35:54,577 INFO  [PluginContainerResourceManager] Discovering Resources...
+```
