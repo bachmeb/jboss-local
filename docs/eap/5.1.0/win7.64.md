@@ -153,7 +153,7 @@ Set JAVA_HOME to the directory of your local JDK to avoid this message.
 * http://localhost:8080/
 
 ##### Enable the admin username and password for the JBoss EAP Admin Console
-* $DEV\jboss\eap\5.1.0\jboss-as\server\default\deploy\management\console-mgr.sar\web-console.war\WEB-INF\classes\web-console-users.properties
+* Edit $DEV\jboss\eap\5.1.0\jboss-as\server\default\deploy\management\console-mgr.sar\web-console.war\WEB-INF\classes\web-console-users.properties
 ```
 # A sample users.properties file for use with the UsersRolesLoginModule
 admin=admin
