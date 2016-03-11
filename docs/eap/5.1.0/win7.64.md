@@ -36,8 +36,31 @@ java -version
 ##### Extract the contents of jboss-eap-5.1.0.zip
 * Target: $DEV\jboss\eap\5.1.0
 
+##### Create a JAVA_HOME environment variable
+* Start > Control Panel > System > Advanced System Settings > Environment Variables > System Variables > Path > Edit
+* Append the following: $DEV\java\6\64\jdk1.6.0_45\bin;
+
 ##### Start JBoss
 	$JBOSS_HOME\bin\run.bat
+```
 
+$ ./run.bat
+Calling C:\DEV\jboss\eap\5.1.0\jboss-as\bin\run.conf.bat
+JAVA_HOME is not set. Unexpected results may occur.
+Set JAVA_HOME to the directory of your local JDK to avoid this message.
+===============================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: C:\DEV\jboss\eap\5.1.0\jboss-as
+
+  JAVA: java
+
+  JAVA_OPTS: -Xms1303m -Xmx1303m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warni                                                        ng=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=                                                      3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -Dsun.rmi.dgc.client.gcInte                                                      rval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dorg.jboss.resolver.warnin                                                      g=true -Dprogram.name=run.bat -server
+
+  CLASSPATH: C:\DEV\jboss\eap\5.1.0\jboss-as\bin\run.jar
+
+===============================================================================
+```
 ##### Stop JBoss
 	ctrl-c
