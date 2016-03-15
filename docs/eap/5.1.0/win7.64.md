@@ -8,6 +8,7 @@
 * http://hiplab.mc.vanderbilt.edu/projects/soempi/jboss_startstop.html
 * http://stackoverflow.com/questions/5415608/jboss-default-password
 * http://centerkey.com/jboss/
+* https://docs.jboss.org/jbossas/docs/Installation_Guide/4/html/setting_JBOSS_HOME_windows.html
 
 In this tutorial $DEV refers to C:\DEV\ on my system. For consistency, you can choose any folder you like to be your DEV folder. 
 
@@ -43,9 +44,10 @@ java -version
 ##### Extract the contents of jboss-eap-5.1.0.zip
 * Target: $DEV\jboss\eap\5.1.0
 
-##### Create a JAVA_HOME environment variable
-* Start > Control Panel > System > Advanced System Settings > Environment Variables > System Variables > Path > Edit
-* Append the following: $DEV\java\6\64\jdk1.6.0_45\bin;
+##### Set JBOSS_HOME 
+* Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > New
+  * Variable name: JBOSS_HOME
+  * Variable value: $DEV\jboss\eap\5.1.0\jboss-as
 
 ##### Start JBoss from the Windows command line
 	$JBOSS_HOME\bin\run.bat
