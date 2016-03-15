@@ -248,3 +248,8 @@ pause
 
 ##### View the web app in a browser
 * http://localhost:8080/helloworld/hi.jsp
+```
+Hello, World.
+
+Tue Mar 15 13:30:47 EDT 2016
+```
