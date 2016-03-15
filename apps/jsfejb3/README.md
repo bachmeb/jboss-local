@@ -4,9 +4,6 @@
 * http://docs.jboss.org/jbossas/docs/Getting_Started_Guide/beta422/html/About_the_Example_Applications.html
 * http://ant.apache.org/manual/install.html
 
-##### Create a project directory
-* $DEV\git\jboss-local\apps\jsfejb3
-
 ##### Download ant
 * http://ant.apache.org/bindownload.cgi
 
@@ -22,4 +19,125 @@
 * Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > PATH > Edit
 * Append the following: %ANT_HOME%\bin;
 
+##### Verify ant
+    ant version
 
+##### Create a project directory
+* $DEV\git\jboss-local\apps\jsfejb3
+
+##### Create Todo class
+```java
+@Entity
+public class Todo implements Serializable {
+
+  private long id;
+  private String title;
+  private String description;
+
+  public Todo () {
+    title ="";
+    description ="";
+  }
+
+  @Id @GeneratedValue
+  public long getId() { return id;}
+  public void setId(long id) { this.id = id; }
+
+  public String getTitle() { return title; }
+  public void setTitle(String title) {this.title = title;}
+
+  public String getDescription() { return description; }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+}
+```
+
+##### Create index.xhtml
+```html
+<h:form>
+<ul>
+  <li><h:commandLink type="submit" value="Create New Todo" action="create"/></li>
+  <li><h:commandLink type="submit" value="Show All Todos" action="todos"/></li>
+</ul>
+</h:form>
+```
+
+##### Create create.xhtml
+```html
+<h:form id="create">
+<table>
+  <tr>
+    <td>Title:</td>
+    <td>
+      <h:inputText id="title" value="#{todoBean.todo.title}" size="15">
+        <f:validateLength minimum="2"/>
+      </h:inputText>
+    </td>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td>
+      <h:inputTextarea id="description" value="#{todoBean.todo.description}">
+        <f:validateLength minimum="2" maximum="250"/>
+      </h:inputTextarea>
+    </td>
+  </tr>
+</table>
+<h:commandButton type="submit" id="create" value="Create"
+                 action="#{todoBean.persist}"/>
+</h:form>
+```
+
+##### Create todos.xhtml
+```html
+<h:form>
+<h:dataTable value="#{todoBean.todos}" var="todo">
+  <h:column>
+    <f:facet name="header">Title</f:facet>
+    #{todo.title}
+  </h:column>
+  <h:column>
+    <f:facet name="header">Description</f:facet>
+    #{todo.description}
+  </h:column>
+  <h:column>
+    <a href="edit.faces?tid=#{todo.id}">Edit</a>
+  </h:column>
+</h:dataTable>
+<center>
+  <h:commandButton action="create"
+            value="Create New Todo" type="submit"/>
+</center>
+</h:form>
+```
+##### Create edit.xhtml
+```html
+<h2>Edit #{todoBean.todo.title}</h2>
+<h:form id="edit">
+<input type="hidden" name="tid" value="#{todoBean.todo.id}"/>
+<table>
+  <tr>
+    <td>Title:</td>
+    <td>
+      <h:inputText id="title" value="#{todoBean.todo.title}" size="15">
+        <f:validateLength minimum="2"/>
+      </h:inputText>
+    </td>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td>
+      <h:inputTextarea id="description" value="#{todoBean.todo.description}">
+        <f:validateLength minimum="2" maximum="250"/>
+      </h:inputTextarea>
+    </td>
+  </tr>
+</table>
+<h:commandButton type="submit" id="update" value="Update"
+                 action="#{todoBean.update}"/>
+<h:commandButton type="submit" id="delete" value="Delete"
+                 action="#{todoBean.delete}"/>
+</h:form>
+```
