@@ -19,9 +19,14 @@ In this tutorial $DEV refers to C:\DEV\ on my system. For consistency, you can c
 * *Custom Setup*
 	* Install to: $DEV\java\6\64\jdk1.6.0_45\
 
-##### Add bin folder to Windows PATH environment variable
-* Start > Control Panel > System > Advanced System Settings > Environment Variables > System Variables > Path > Edit
-* Append the following: $DEV\java\6\64\jdk1.6.0_45\bin;
+##### Set JAVA_HOME 
+* Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > New
+  * Variable name: JAVA_HOME
+  * Variable value: $DEV\java\6\64\jdk1.6.0_45
+
+##### Add bin folder to the PATH user environment variable
+* Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > PATH > Edit
+* Append the following: %JAVA_HOME%\bin;
 
 ##### Confirm the Java version from the command line
 * Start > cmd
