@@ -241,6 +241,7 @@ pause
 ```
 
 ##### Run the deployment script
+* $DEV\git\jboss-local\helloworld\WEB-INF\Deploy.cmd
 ```
 13:30:13,307 INFO  [TomcatDeployment] deploy, ctxPath=/helloworld
 ```
