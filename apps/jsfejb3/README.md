@@ -154,7 +154,7 @@ public interface TodoDaoInt {
 }
 ```
 
-##### Create
+##### Create TodoDao
 ```java
 @Stateless
 public class TodoDao implements TodoDaoInt {
@@ -185,4 +185,34 @@ public class TodoDao implements TodoDaoInt {
   }
 
 }
+```
+
+```
+jsfejb3.ear
+|+ app.jar   // contains the EJB code
+    |+ import.sql
+    |+ Todo.class
+    |+ TodoDao.class
+    |+ TodoDaoInt.class
+    |+ META-INF
+        |+ persistence.xml
+|+ app.war   // contains web UI
+    |+ index.html
+    |+ index.xhtml
+    |+ create.xhtml
+    |+ edit.xhtml
+    |+ todos.xhtml
+    |+ TodoBean.class
+    |+ style.css
+    |+ META-INF
+    |+ WEB-INF
+       |+ faces-config.xml
+       |+ navigation.xml
+       |+ web.xml
+|+ META-INF  // contains the descriptors
+    |+ application.xml
+    |+ jboss-app.xml
+```
+
+```xml
 ```
