@@ -5,6 +5,9 @@
 * http://ant.apache.org/manual/install.html
 * https://github.com/jeffzhang/docant-jboss/blob/master/jbossas/6/Installation_And_Getting_Started_Guide/en-US/Sample_JSF_EJB3_Application.xml
 
+##### Setup a local MySQL server
+* https://github.com/bachmeb/mysql-local
+
 ##### Download ant
 * http://ant.apache.org/bindownload.cgi
 
