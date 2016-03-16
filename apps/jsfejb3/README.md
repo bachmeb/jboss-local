@@ -215,4 +215,37 @@ jsfejb3.ear
 ```
 
 ```xml
+<application>
+  <display-name>Sample Todo</display-name>
+  <module>
+    <web>
+      <web-uri>app.war</web-uri>
+      <context-root>/jsfejb3</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>app.jar</ejb>
+  </module>
+</application>
+```
+
+```
+<jboss-app>
+  <loader-repository>
+    jsfejb3:archive=jsfejb3.ear
+  </loader-repository>
+</jboss-app>
+```
+
+```
+<persistence>
+   <persistence-unit name="helloworld">
+      <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>java:/DefaultDS</jta-data-source>
+      <properties>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+         <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+      </properties>
+   </persistence-unit>
+</persistence>
 ```
