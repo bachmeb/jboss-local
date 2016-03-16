@@ -249,3 +249,20 @@ jsfejb3.ear
    </persistence-unit>
 </persistence>
 ```
+
+```
+//faces-config.xml
+<faces-config>
+  <application>
+    <view-handler>
+      com.sun.facelets.FaceletViewHandler
+    </view-handler>
+  </application>
+  <managed-bean>
+    <description>Dao</description>
+    <managed-bean-name>todoBean</managed-bean-name>
+    <managed-bean-class>TodoBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</faces-config>
+```
