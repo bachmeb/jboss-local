@@ -26,42 +26,6 @@
 * Copy from: $DEV\jboss\eap\4.3\doc\examples\gettingstarted\jsfejb3
 * Copy to: $DEV\git\jboss-local\apps\jsfejb3
 
-##### Review the Todo class
-* $DEV\git\jboss-local\apps\jsfejb3\src\Todo.java
-```java
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
-
-@Entity
-public class Todo implements Serializable {
-
-  private long id;
-  private String title;
-  private String description;
-
-  public Todo () {
-    title ="";
-    description ="";
-  }
-
-  @Id @GeneratedValue
-  public long getId() { return id;}
-  public void setId(long id) { this.id = id; }
-
-  public String getTitle() { return title; }
-  public void setTitle(String title) {this.title = title;}
-
-  public String getDescription() { return description; }
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-}
-```
-
 ##### Review index.html
 ```html
 <html>
@@ -156,7 +120,7 @@ public class Todo implements Serializable {
 </html>
 ```
 
-##### Create todos.xhtml
+##### Review todos.xhtml
 * $DEV\git\jboss-local\apps\jsfejb3\view\todos.xhtml
 ```html
 <!DOCTYPE html PUBLIC 
@@ -277,6 +241,42 @@ public class Todo implements Serializable {
 }
 ```
 
+##### Review the entity clean
+* $DEV\git\jboss-local\apps\jsfejb3\src\Todo.java
+```java
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
+
+@Entity
+public class Todo implements Serializable {
+
+  private long id;
+  private String title;
+  private String description;
+
+  public Todo () {
+    title ="";
+    description ="";
+  }
+
+  @Id @GeneratedValue
+  public long getId() { return id;}
+  public void setId(long id) { this.id = id; }
+
+  public String getTitle() { return title; }
+  public void setTitle(String title) {this.title = title;}
+
+  public String getDescription() { return description; }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+}
+```
+
 ##### Review the DAO interface
 * DEV\git\jboss-local\apps\jsfejb3\src\TodoDaoInt.java
 ```java
@@ -327,6 +327,68 @@ public class TodoDao implements TodoDaoInt {
 
   public Todo findTodo (String id) {
     return (Todo) em.find(Todo.class, Long.parseLong(id));
+  }
+
+}
+```
+
+##### Review the to do bean
+```java
+import javax.naming.InitialContext;
+import java.util.*;
+import javax.faces.model.*;
+import javax.faces.context.*;
+
+public class TodoBean {
+
+  private Todo todo;
+
+  public TodoBean () {
+    FacesContext fc = FacesContext.getCurrentInstance();
+    Map requestParams = fc.getExternalContext().getRequestParameterMap();
+    String id = (String) requestParams.get("tid");
+    if (id != null) {
+      todo = getDao().findTodo(id);
+    } else {
+      todo = new Todo ();
+    }
+  }
+
+  private TodoDaoInt getDao () {
+    try {
+      InitialContext ctx = new InitialContext();
+      return (TodoDaoInt) ctx.lookup("jsfejb3/TodoDao/local");
+    } catch (Exception e) {
+      e.printStackTrace();
+      throw new RuntimeException("couldn't lookup Dao", e);
+    }
+  }
+ 
+  public String persist () {
+    getDao().persist (todo);
+    return "persisted";
+  }
+
+  public DataModel getTodos () {
+    return (new ListDataModel (getDao().findTodos()));
+  }
+
+  public Todo getTodo () {
+    return todo;
+  }
+
+  public void setTodo (Todo todo) {
+    this.todo = todo;
+  }
+
+  public String delete () {
+    getDao().delete( todo );
+    return "removed";
+  }
+
+  public String update () {
+    getDao().update( todo );
+    return "updated";
   }
 
 }
