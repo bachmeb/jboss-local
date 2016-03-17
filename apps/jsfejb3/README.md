@@ -489,41 +489,6 @@ public class TodoBean {
 </project>
 ```
 
-##### Open a command prompt
-	* Start > Run > cmd
-
-##### Build the project
-	cd $DEV\git\jboss-local\apps\jsfejb3
-	ant
-
-##### Examine the file structure of the EAR file
-```
-jsfejb3.ear
-|+ app.jar   // contains the EJB code
-    |+ import.sql
-    |+ Todo.class
-    |+ TodoDao.class
-    |+ TodoDaoInt.class
-    |+ META-INF
-        |+ persistence.xml
-|+ app.war   // contains web UI
-    |+ index.html
-    |+ index.xhtml
-    |+ create.xhtml
-    |+ edit.xhtml
-    |+ todos.xhtml
-    |+ TodoBean.class
-    |+ style.css
-    |+ META-INF
-    |+ WEB-INF
-       |+ faces-config.xml
-       |+ navigation.xml
-       |+ web.xml
-|+ META-INF  // contains the descriptors
-    |+ application.xml
-    |+ jboss-app.xml
-```
-
 ##### Review the application.xml file
 * $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\application.xml
 ```xml
@@ -584,6 +549,7 @@ jsfejb3.ear
 </faces-config>
 ```
 
+
 ##### Download ant
 * http://ant.apache.org/bindownload.cgi
 
@@ -601,6 +567,41 @@ jsfejb3.ear
 
 ##### Verify ant
     ant version
+
+##### Open a command prompt
+	* Start > Run > cmd
+
+##### Build the project
+	cd $DEV\git\jboss-local\apps\jsfejb3
+	ant
+
+##### Examine the file structure of the EAR file
+```
+jsfejb3.ear
+|+ app.jar   // contains the EJB code
+    |+ import.sql
+    |+ Todo.class
+    |+ TodoDao.class
+    |+ TodoDaoInt.class
+    |+ META-INF
+        |+ persistence.xml
+|+ app.war   // contains web UI
+    |+ index.html
+    |+ index.xhtml
+    |+ create.xhtml
+    |+ edit.xhtml
+    |+ todos.xhtml
+    |+ TodoBean.class
+    |+ style.css
+    |+ META-INF
+    |+ WEB-INF
+       |+ faces-config.xml
+       |+ navigation.xml
+       |+ web.xml
+|+ META-INF  // contains the descriptors
+    |+ application.xml
+    |+ jboss-app.xml
+```
 
 
 ##### Setup a local MySQL server
