@@ -297,7 +297,7 @@ public interface TodoDaoInt {
 ##### Review the DAO class
 * DEV\git\jboss-local\apps\jsfejb3\src\TodoDao.java
 
-*The @PersistenceContext annotation tells the JBoss Server to inject an entity manager during deployment.*
+*[The @PersistenceContext annotation tells the JBoss Server to inject an entity manager during deployment.](http://docs.jboss.org/jbossas/docs/Getting_Started_Guide/beta422/html/Sample_JSF_EJB3_Application-EJB3_Session_Beans.html)*
 ```java
 import java.util.List;
 import javax.ejb.*;
