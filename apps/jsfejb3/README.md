@@ -11,6 +11,7 @@
 * https://github.com/bachmeb/jsfejb3
 * http://stackoverflow.com/questions/10652912/jboss-5-1-server
 * https://developer.jboss.org/thread/149783?tstart=0
+* http://stackoverflow.com/questions/5103384/ant-warning-includeantruntime-was-not-set
 
 ##### Download and install JBoss
 * https://github.com/bachmeb/jboss-local
@@ -623,6 +624,137 @@ BUILD SUCCESSFUL
 Total time: 14 seconds
 */
 ```
+
+##### Add includeantruntime="false" to the javac node in build.xml
+* $DEV\git\jboss-local\apps\jsfejb3\build.xml
+```xml
+		<javac destdir="${build.classes}" 
+			classpathref="lib.classpath" 
+			debug="true"
+			includeantruntime="false"
+			>
+			<src path="${src}" />
+		</javac>
+```
+
+##### Clean the project
+```
+ant clean
+```
+```c
+/*
+Buildfile: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml
+
+clean:
+   [delete] Deleting directory C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+*/
+```
+
+##### Rebuild the project
+```
+ant -v
+```
+```c
+/*
+Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+Trying the default build file: build.xml
+Buildfile: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml
+Detected Java version: 1.6 in: C:\DEV\java\6\64\jdk1.6.0_45\jre
+Detected OS: Windows 7
+parsing buildfile C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml with URI = file:/C:/DEV/git/bachmeb/jboss-local/apps/jsfejb3/build.xml
+Project base dir set to: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3
+parsing buildfile jar:file:/C:/DEV/ant/apache-ant-1.9.6/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/C:/DEV/ant/apache-ant-1.9.6/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading C:\DEV\git\bachmeb\jboss-local\apps\build.properties
+ [property] Unable to find property file: C:\DEV\git\bachmeb\jboss-local\apps\build.properties
+ [property] Loading Environment ENV.
+Build sequence for target(s) `main' is [compile, war, ejb3jar, ear, main]
+Complete build sequence is [compile, war, ejb3jar, ear, main, deploy, clean, undeploy, ]
+
+compile:
+    [mkdir] Created dir: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\classes
+    [javac] Todo.java added as Todo.class doesn't exist.
+    [javac] TodoBean.java added as TodoBean.class doesn't exist.
+    [javac] TodoDao.java added as TodoDao.class doesn't exist.
+    [javac] TodoDaoInt.java added as TodoDaoInt.class doesn't exist.
+    [javac] Compiling 4 source files to C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\classes
+    [javac] Using modern compiler
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] 'C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\classes'
+    [javac] '-classpath'
+    [javac] 'C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\classes;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\concurrent.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\dom4j.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\getopt.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\javassist.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jaxb-impl.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jaxb-xjc.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-aop-asintegration-core.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-aop-asintegration-jmx.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-aop-asintegration-mc.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-aop-deployers.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-aop-mc-int.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-aop.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-bootstrap.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-classloader.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-classloading-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-classloading-vfs.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-classloading.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-common-core.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-dependency.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-client-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-core-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-core.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-impl.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-structure-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-vfs-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-deployers-vfs.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-j2se.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-javaee.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-jmx.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-kernel.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-logbridge.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-logging-jdk.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-logging-log4j.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-logging-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-logmanager.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-main.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-managed.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-mbeans.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-mdr.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-metatype.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-profileservice-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-reflect.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-security-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-system-jmx.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-system.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-vfs.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jboss-xml-binding.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jbosssx-server.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\jbosssx.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\log4j-boot.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\trove.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\lib\wstx.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\FastInfoset.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\activation.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\antlr.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\commons-logging.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\concurrent.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\ejb3-persistence.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\getopt.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\hibernate-annotations.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\hibernate-commons-annotations.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\hibernate-core.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\hibernate-validator.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\hornetq-core-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\hornetq-jms-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jacorb.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\javassist.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jaxb-api.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jaxb-impl.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jaxb-xjc.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jaxws-rt.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jaxws-tools.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-aop-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-appclient.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-aspect-jdk50-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-common-core.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-deployers-client-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-deployers-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-deployers-core-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-deployers-core.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-deployers-vfs-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-deployers-vfs.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-deployment.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-common-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-core-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-ext-api-impl.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-ext-api.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-proxy-clustered-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-proxy-impl-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-proxy-spi-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-security-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ejb3-vfs-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ha-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-ha-legacy-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-iiop-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-integration.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-j2se.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-jaspi-api.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-javaee.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-jsr77-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-logging-jdk.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-logging-log4j.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-logging-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-mdr.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-messaging-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-metadata.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-profileservice-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-remoting.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-security-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-serialization.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-srp-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-system-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-system-jmx-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jboss-xml-binding.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossall-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbosscx-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossjmx-ant.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossjts-integration.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossjts-jacorb.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossjts.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbosssx-as-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbosssx-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-common.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-framework.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-jboss50.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-native-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-native-core.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-native-jaxrpc.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-native-jaxws-ext.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-native-jaxws.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-native-saaj.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jbossws-spi.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jettison.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jmx-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jmx-invoker-adaptor-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\jnp-client.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\log4j.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\logkit.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\mail.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\netty.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\scout.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\slf4j-api.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\slf4j-jboss-logging.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\stax-api.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\stax-ex.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\streambuffer.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\trove.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\wsdl4j.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\wstx.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\client\xmlsec.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\deploy\jbossweb.sar\jsf-libs\jboss-faces.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\deploy\jbossweb.sar\jsf-libs\jsf-api.jar;C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\deploy\jbossweb.sar\jsf-libs\jsf-impl.jar;C:\DEV\jboss\eap\5.1.0\seam\lib\jsf-facelets.jar'
+    [javac] '-sourcepath'
+    [javac] 'C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\src'
+    [javac] '-g'
+    [javac]
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] Files to be compiled:
+    [javac]     C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\Todo.java
+    [javac]     C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoBean.java
+    [javac]     C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDao.java
+    [javac]     C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDaoInt.java
+    [javac] Note: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDao.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+war:
+    [mkdir] Created dir: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars
+      [war] Building war: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars\app.war
+      [war] adding directory META-INF/
+      [war] adding entry META-INF/MANIFEST.MF
+      [war] adding directory WEB-INF/
+      [war] adding entry WEB-INF/web.xml
+      [war] adding entry TodoBean.class
+      [war] adding entry WEB-INF/faces-config.xml
+      [war] adding entry WEB-INF/navigation.xml
+      [war] adding directory WEB-INF/lib/
+      [war] adding entry WEB-INF/lib/jsf-facelets.jar
+      [war] adding entry create.xhtml
+      [war] adding entry edit.xhtml
+      [war] adding entry error.png
+      [war] adding entry index.html
+      [war] adding entry index.xhtml
+      [war] adding entry style.css
+      [war] adding entry todos.xhtml
+      [war] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [war] Location: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml:49:
+
+ejb3jar:
+    [mkdir] Skipping C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars because it already exists.
+      [jar] Building jar: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars\app.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding entry Todo.class
+      [jar] adding entry TodoDao.class
+      [jar] adding entry TodoDaoInt.class
+      [jar] adding entry import.sql
+      [jar] adding entry META-INF/persistence.xml
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml:66:
+
+ear:
+    [mkdir] Skipping C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars because it already exists.
+      [ear] Building ear: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars\jsfejb3.ear
+      [ear] adding directory META-INF/
+      [ear] adding entry META-INF/MANIFEST.MF
+      [ear] adding entry META-INF/application.xml
+      [ear] adding entry app.jar
+      [ear] adding entry app.war
+      [ear] adding entry META-INF/jboss-app.xml
+      [ear] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [ear] Location: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml:87:
+
+main:
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
+
+*/
+```
+
 ##### Examine the file structure of the EAR file
 ```
 jsfejb3.ear
