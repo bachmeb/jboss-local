@@ -27,6 +27,7 @@
 * Copy to: $DEV\git\jboss-local\apps\jsfejb3
 
 ##### Review index.html
+* $DEV\git\jboss-local\apps\jsfejb3\view\index.html
 ```html
 <html>
 	<head>
@@ -241,7 +242,7 @@
 }
 ```
 
-##### Review the entity clean
+##### Review the entity class
 * $DEV\git\jboss-local\apps\jsfejb3\src\Todo.java
 ```java
 import java.io.Serializable;
@@ -295,6 +296,8 @@ public interface TodoDaoInt {
 
 ##### Review the DAO class
 * DEV\git\jboss-local\apps\jsfejb3\src\TodoDao.java
+
+*The @PersistenceContext annotation tells the JBoss Server to inject an entity manager during deployment.*
 ```java
 import java.util.List;
 import javax.ejb.*;
