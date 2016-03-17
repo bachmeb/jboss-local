@@ -62,100 +62,214 @@ public class Todo implements Serializable {
 }
 ```
 
-##### Create index.xhtml
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\index.xhtml
+##### Review index.html
 ```html
-<h:form>
-<ul>
-  <li><h:commandLink type="submit" value="Create New Todo" action="create"/></li>
-  <li><h:commandLink type="submit" value="Show All Todos" action="todos"/></li>
-</ul>
-</h:form>
+<html>
+	<head>
+		<meta http-equiv="Refresh" content="0; URL=index.faces">
+	</head>
+</html>
 ```
 
-##### Create create.xhtml
+##### Review index.xhtml
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\index.xhtml
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+		<h2>JSF-EJB3</h2>
+
+		<p>Actions:</p>
+
+		<h:form>
+
+		<ul>
+			<li><h:commandLink value="Create New Todo" action="create"/></li>
+			<li><h:commandLink value="Show All Todos" action="todos"/></li>
+		</ul>
+
+		</h:form>
+
+	</body>
+</html>
+```
+
+##### Review create.xhtml
 * $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\create.xhtml
 ```html
-<h:form id="create">
-<table>
-  <tr>
-    <td>Title:</td>
-    <td>
-      <h:inputText id="title" value="#{todoBean.todo.title}" size="15">
-        <f:validateLength minimum="2"/>
-      </h:inputText>
-    </td>
-  </tr>
-  <tr>
-    <td>Description:</td>
-    <td>
-      <h:inputTextarea id="description" value="#{todoBean.todo.description}">
-        <f:validateLength minimum="2" maximum="250"/>
-      </h:inputTextarea>
-    </td>
-  </tr>
-</table>
-<h:commandButton type="submit" id="create" value="Create"
-                 action="#{todoBean.persist}"/>
-</h:form>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core">
+
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+		<h2>DataModel, Validation and Restful Page Demo</h2>
+
+		<h:form id="create">
+
+		<table>
+
+		  <tr>
+			<td>Title:</td>
+			<td>
+			  <h:inputText id="title" value="#{todoBean.todo.title}" size="15">
+				<f:validateLength minimum="2"/>
+			  </h:inputText>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td>Description:</td>
+			<td>
+			  <h:inputTextarea id="description" value="#{todoBean.todo.description}">
+				<f:validateLength minimum="2" maximum="250"/>
+			  </h:inputTextarea>
+			</td>
+		  </tr>
+
+		</table>
+
+		<h:commandButton type="submit" id="create" value="Create"
+						 action="#{todoBean.persist}"/>
+		</h:form>
+
+	</body>
+</html>
 ```
 
 ##### Create todos.xhtml
 * $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\todos.xhtml
 ```html
-<h:form>
-<h:dataTable value="#{todoBean.todos}" var="todo">
-  <h:column>
-    <f:facet name="header">Title</f:facet>
-    #{todo.title}
-  </h:column>
-  <h:column>
-    <f:facet name="header">Description</f:facet>
-    #{todo.description}
-  </h:column>
-  <h:column>
-    <a href="edit.faces?tid=#{todo.id}">Edit</a>
-  </h:column>
-</h:dataTable>
-<center>
-  <h:commandButton action="create"
-            value="Create New Todo" type="submit"/>
-</center>
-</h:form>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<body>
+
+		<h2>The Todo List</h2>
+
+		<h:form>
+
+			<h:dataTable value="#{todoBean.todos}" var="todo">
+				<h:column>
+					<f:facet name="header">Title</f:facet>
+					#{todo.title}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Description</f:facet>
+					#{todo.description}
+				</h:column>
+				<h:column>
+					<a href="edit.faces?tid=#{todo.id}">Edit</a>
+				</h:column>
+			</h:dataTable>
+
+			<center>
+				<h:commandButton action="create"
+				value="Create New Todo" type="submit"/>
+			</center>
+
+		</h:form>
+
+	</body>
+</html>
 ```
-##### Create edit.xhtml
+##### Review edit.xhtml
 * $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\edit.xhtml
 ```html
-<h2>Edit #{todoBean.todo.title}</h2>
-<h:form id="edit">
-<input type="hidden" name="tid" value="#{todoBean.todo.id}"/>
-<table>
-  <tr>
-    <td>Title:</td>
-    <td>
-      <h:inputText id="title" value="#{todoBean.todo.title}" size="15">
-        <f:validateLength minimum="2"/>
-      </h:inputText>
-    </td>
-  </tr>
-  <tr>
-    <td>Description:</td>
-    <td>
-      <h:inputTextarea id="description" value="#{todoBean.todo.description}">
-        <f:validateLength minimum="2" maximum="250"/>
-      </h:inputTextarea>
-    </td>
-  </tr>
-</table>
-<h:commandButton type="submit" id="update" value="Update"
-                 action="#{todoBean.update}"/>
-<h:commandButton type="submit" id="delete" value="Delete"
-                 action="#{todoBean.delete}"/>
-</h:form>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+
+	<body>
+		<h2>Edit #{todoBean.todo.title}</h2>
+
+		<h:form id="edit">
+
+			<input type="hidden" name="tid" value="#{todoBean.todo.id}"/>
+
+			<table>
+
+				<tr>
+					<td>Title:</td>
+					<td>
+						<h:inputText id="title" value="#{todoBean.todo.title}" size="15">
+						<f:validateLength minimum="2"/>
+						</h:inputText>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Description:</td>
+					<td>
+						<h:inputTextarea id="description" value="#{todoBean.todo.description}">
+						<f:validateLength minimum="2" maximum="250"/>
+						</h:inputTextarea>
+					</td>
+				</tr>
+
+			</table>
+
+			<h:commandButton type="submit" id="update" value="Update"
+			action="#{todoBean.update}"/>
+			&nbsp;
+			<h:commandButton type="submit" id="delete" value="Delete"
+			action="#{todoBean.delete}"/>
+		</h:form>
+
+	</body>
+</html>
 ```
+
+##### Review style.css
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\style.css
+```css
+.error {
+  color: red;
+  border: solid red;
+  padding: .4em;
+  margin: 10px
+}
+
+.errorImg {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+
+.errorMsg {
+  display: block;
+  margin: 5px;
+  padding: .1em;
+}
+```
+
 ##### Review the DAO interface
 * DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDaoInt.java
 ```java
+import java.util.List;
+
 public interface TodoDaoInt {
 
   public void persist (Todo todo);
@@ -170,6 +284,11 @@ public interface TodoDaoInt {
 ##### Review the DAO class
 * DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDao.java
 ```java
+import java.util.List;
+import javax.ejb.*;
+import javax.persistence.*;
+import static javax.persistence.PersistenceContextType.EXTENDED;
+
 @Stateless
 public class TodoDao implements TodoDaoInt {
 
