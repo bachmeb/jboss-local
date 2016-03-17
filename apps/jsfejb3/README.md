@@ -74,7 +74,10 @@ public class Todo implements Serializable {
 ##### Review index.xhtml
 * $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\index.xhtml
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC 
+	"-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -105,7 +108,10 @@ public class Todo implements Serializable {
 ##### Review create.xhtml
 * $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\create.xhtml
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC 
+	"-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:h="http://java.sun.com/jsf/html"
@@ -153,7 +159,10 @@ public class Todo implements Serializable {
 ##### Create todos.xhtml
 * $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\todos.xhtml
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC 
+	"-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -192,7 +201,10 @@ public class Todo implements Serializable {
 ##### Review edit.xhtml
 * $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\edit.xhtml
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -415,7 +427,12 @@ public class TodoDao implements TodoDaoInt {
 </project>
 ```
 
+##### Open a command prompt
+	* Start > Run > cmd
+
 ##### Build the project
+	cd $DEV\git\bachmeb\jboss-local\apps\jsfejb3
+	ant
 
 ##### Examine the file structure of the EAR file
 ```
