@@ -14,6 +14,9 @@
 ##### Download the Application Platform 4.3.0.GA_CP09 documentation
 * https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
 
+##### Unpack the contents of jboss-eap-docs-4.3.0.GA_CP09 to
+* $DEV\jboss\eap\4.3
+
 ##### Create a project directory
 * $DEV\git\jboss-local\apps\jsfejb3
 
