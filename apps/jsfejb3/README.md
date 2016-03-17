@@ -8,6 +8,7 @@
 * https://developer.jboss.org/wiki/SampleJSF-EJB3Application
 * https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
 * http://markmail.org/thread/ldqdq7y37tgr5rcz
+* https://github.com/bachmeb/jsfejb3
 
 ##### Download and install JBoss
 * https://github.com/bachmeb/jboss-local
@@ -26,8 +27,14 @@
 * Copy to: $DEV\git\jboss-local\apps\jsfejb3
 
 ##### Review the Todo class
-* DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\Todo.java
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\Todo.java
 ```java
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
+
 @Entity
 public class Todo implements Serializable {
 
