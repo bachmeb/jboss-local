@@ -783,6 +783,20 @@ jsfejb3.ear
     |+ jboss-app.xml
 ```
 
+##### Deploy the project
+```
+ant deploy
+```
+```
+/*
+Buildfile: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml
 
+deploy:
+     [copy] Copying 1 file to C:\DEV\jboss\eap\5.1.0\jboss-as\server\default\deploy
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+*/
+```
 ##### Setup a local MySQL server
 * https://github.com/bachmeb/mysql-local
