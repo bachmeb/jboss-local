@@ -7,6 +7,7 @@
 * http://stackoverflow.com/questions/5118821/jboss-gettingstarted-zip
 * https://developer.jboss.org/wiki/SampleJSF-EJB3Application
 * https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
+* http://markmail.org/thread/ldqdq7y37tgr5rcz
 
 ##### Download and install JBoss
 * https://github.com/bachmeb/jboss-local
@@ -20,7 +21,12 @@
 ##### Create a project directory
 * $DEV\git\jboss-local\apps\jsfejb3
 
-##### Create Todo class
+##### Copy the getting started code to the project directory
+* Copy from: $DEV\jboss\eap\4.3\doc\examples\gettingstarted\jsfejb3
+* Copy to: $DEV\git\jboss-local\apps\jsfejb3
+
+##### Review the Todo class
+* DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\Todo.java
 ```java
 @Entity
 public class Todo implements Serializable {
@@ -50,6 +56,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Create index.xhtml
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\index.xhtml
 ```html
 <h:form>
 <ul>
@@ -60,6 +67,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Create create.xhtml
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\create.xhtml
 ```html
 <h:form id="create">
 <table>
@@ -86,6 +94,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Create todos.xhtml
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\todos.xhtml
 ```html
 <h:form>
 <h:dataTable value="#{todoBean.todos}" var="todo">
@@ -108,6 +117,7 @@ public class Todo implements Serializable {
 </h:form>
 ```
 ##### Create edit.xhtml
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\edit.xhtml
 ```html
 <h2>Edit #{todoBean.todo.title}</h2>
 <h:form id="edit">
@@ -136,7 +146,8 @@ public class Todo implements Serializable {
                  action="#{todoBean.delete}"/>
 </h:form>
 ```
-##### Create TodoDaoInt.java
+##### Review the DAO interface
+* DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDaoInt.java
 ```java
 public interface TodoDaoInt {
 
@@ -149,7 +160,8 @@ public interface TodoDaoInt {
 }
 ```
 
-##### Create TodoDao
+##### Review the DAO class
+* DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDao.java
 ```java
 @Stateless
 public class TodoDao implements TodoDaoInt {
@@ -182,6 +194,7 @@ public class TodoDao implements TodoDaoInt {
 }
 ```
 
+##### Examine the file structure of the EAR file
 ```
 jsfejb3.ear
 |+ app.jar   // contains the EJB code
@@ -209,6 +222,8 @@ jsfejb3.ear
     |+ jboss-app.xml
 ```
 
+##### Review the application.xml file
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\resources\META-INF\application.xml
 ```xml
 <application>
   <display-name>Sample Todo</display-name>
@@ -224,6 +239,8 @@ jsfejb3.ear
 </application>
 ```
 
+##### Review the jboss-app.xml
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\resources\META-INF\jboss-app.xml
 ```
 <jboss-app>
   <loader-repository>
@@ -232,6 +249,8 @@ jsfejb3.ear
 </jboss-app>
 ```
 
+##### Review the persistence.xml file
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\resources\META-INF\persistence.xml
 ```
 <persistence>
    <persistence-unit name="helloworld">
@@ -245,6 +264,7 @@ jsfejb3.ear
 </persistence>
 ```
 
+##### Review the Faces config file
 ```
 //faces-config.xml
 <faces-config>
