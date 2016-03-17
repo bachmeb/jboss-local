@@ -4,27 +4,13 @@
 * http://docs.jboss.org/jbossas/docs/Getting_Started_Guide/beta422/html/About_the_Example_Applications.html
 * http://ant.apache.org/manual/install.html
 * https://github.com/jeffzhang/docant-jboss/blob/master/jbossas/6/Installation_And_Getting_Started_Guide/en-US/Sample_JSF_EJB3_Application.xml
+* http://stackoverflow.com/questions/5118821/jboss-gettingstarted-zip
+* https://developer.jboss.org/wiki/SampleJSF-EJB3Application
+* https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
 
-##### Setup a local MySQL server
-* https://github.com/bachmeb/mysql-local
+##### Download the Application Platform 4.3.0.GA_CP09 documentation from Red Hat
+* https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
 
-##### Download ant
-* http://ant.apache.org/bindownload.cgi
-
-##### Unzip apache-ant-1.9.6-bin.zip
-* $DEV\ant\apache-ant-1.9.6
-
-##### Set ANT_HOME 
-* Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > New
-  * Variable name: ANT_HOME
-  * Variable value: $DEV\ant\apache-ant-1.9.6
-
-##### Add bin folder to the PATH user environment variable
-* Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > PATH > Edit
-* Append the following: %ANT_HOME%\bin;
-
-##### Verify ant
-    ant version
 
 ##### Create a project directory
 * $DEV\git\jboss-local\apps\jsfejb3
@@ -270,3 +256,25 @@ jsfejb3.ear
   </managed-bean>
 </faces-config>
 ```
+
+##### Download ant
+* http://ant.apache.org/bindownload.cgi
+
+##### Unzip apache-ant-1.9.6-bin.zip
+* $DEV\ant\apache-ant-1.9.6
+
+##### Set ANT_HOME 
+* Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > New
+  * Variable name: ANT_HOME
+  * Variable value: $DEV\ant\apache-ant-1.9.6
+
+##### Add bin folder to the PATH user environment variable
+* Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > PATH > Edit
+* Append the following: %ANT_HOME%\bin;
+
+##### Verify ant
+    ant version
+
+
+##### Setup a local MySQL server
+* https://github.com/bachmeb/mysql-local
