@@ -320,6 +320,103 @@ public class TodoDao implements TodoDaoInt {
 }
 ```
 
+##### Review the build.xml file
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HelloWorld" default="main" basedir=".">
+	<description>Hello World</description>
+	<property name="projname" value="jsfejb3" />
+	<property file="../build.properties" />
+	<property environment="ENV" />
+	<property name="jboss.home" value="${ENV.JBOSS_HOME}" />
+	<property name="jboss.deploy" location="${jboss.home}/server/default/deploy" />
+	<property name="lib" location="${jboss.home}/lib" />
+	<property name="serverlib" location="${jboss.home}/server/default/lib" />
+	<property name="clientlib" location="${jboss.home}/client" />
+	<property name="jsflib" location="${jboss.home}/server/default/deploy/jboss-web.deployer/jsf-libs" />
+	<property name="seamlib" location="${jboss.home}/../seam" />
+	<path id="lib.classpath">
+		<fileset dir="${lib}" includes="*.jar" />
+		<fileset dir="${serverlib}" includes="*.jar" />
+		<fileset dir="${clientlib}" includes="*.jar" />
+		<fileset dir="${jsflib}" includes="*.jar" />
+		<fileset dir="${seamlib}/lib" includes="jsf-facelets.jar" />
+	</path>
+	<property name="resources" location="resources" />
+	<property name="src" location="src" />
+	<property name="test" location="test" />
+	<property name="view" location="view" />
+	<property name="build.classes" location="build/classes" />
+	<property name="build.jars" location="build/jars" />
+	<property name="build.test" location="build/test" />
+	<property name="build.testout" location="build/testout" />
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+	<target name="main" depends="compile,war,ejb3jar,ear" />
+	<target name="compile">
+		<mkdir dir="${build.classes}" />
+		<javac destdir="${build.classes}" classpathref="lib.classpath" debug="true">
+			<src path="${src}" />
+		</javac>
+	</target>
+	<target name="war" depends="compile">
+		<mkdir dir="${build.jars}" />
+		<war destfile="${build.jars}/app.war" webxml="${resources}/WEB-INF/web.xml">
+			<fileset dir="${build.classes}">
+				<include name="TodoBean.class" />
+			</fileset>
+			<webinf dir="${resources}/WEB-INF">
+				<include name="faces-config.xml" />
+				<include name="navigation.xml" />
+			</webinf>
+			<lib dir="${seamlib}/lib">
+				<include name="jsf-facelets.jar" />
+			</lib>
+			<fileset dir="${view}" />
+		</war>
+	</target>
+	<target name="ejb3jar" depends="compile">
+		<mkdir dir="${build.jars}" />
+		<jar destfile="${build.jars}/app.jar">
+			<fileset dir="${build.classes}">
+				<include name="Todo.class" />
+				<include name="TodoDao.class" />
+				<include name="TodoDaoInt.class" />
+			</fileset>
+			<fileset dir="${resources}">
+				<include name="import.sql" />
+			</fileset>
+			<!--<fileset dir="${applib}">
+        <include name="*.jar" />
+      </fileset>-->
+			<metainf dir="${resources}/META-INF">
+				<include name="persistence.xml" />
+				<include name="ejb-jar.xml" />
+			</metainf>
+		</jar>
+	</target>
+	<target name="ear">
+		<mkdir dir="${build.jars}" />
+		<ear destfile="${build.jars}/${projname}.ear" appxml="${resources}/META-INF/application.xml">
+			<fileset dir="${build.jars}" includes="*.jar, *.war" />
+			<metainf dir="${resources}/META-INF">
+				<include name="jboss-app.xml" />
+			</metainf>
+		</ear>
+	</target>
+	<target name="deploy">
+		<copy file="${build.jars}/${projname}.ear" todir="${jboss.deploy}" />
+	</target>
+	<target name="undeploy">
+		<delete file="${jboss.deploy}/${projname}.ear" />
+	</target>
+</project>
+```
+
+##### Build the project
+
 ##### Examine the file structure of the EAR file
 ```
 jsfejb3.ear
