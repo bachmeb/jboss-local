@@ -8,9 +8,11 @@
 * https://developer.jboss.org/wiki/SampleJSF-EJB3Application
 * https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
 
-##### Download the Application Platform 4.3.0.GA_CP09 documentation from Red Hat
-* https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
+##### Download and install JBoss
+* https://github.com/bachmeb/jboss-local
 
+##### Download the Application Platform 4.3.0.GA_CP09 documentation
+* https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
 
 ##### Create a project directory
 * $DEV\git\jboss-local\apps\jsfejb3
