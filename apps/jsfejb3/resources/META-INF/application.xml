@@ -1,0 +1,15 @@
+<application>
+  <display-name>JSFEJB3 Sample Application</display-name>
+
+  <module>
+    <web>
+      <web-uri>app.war</web-uri>
+      <context-root>/jsfejb3</context-root>
+    </web>
+  </module>
+
+  <module>
+    <ejb>app.jar</ejb>
+  </module>
+  
+</application>

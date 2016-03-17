@@ -1,0 +1,5 @@
+<jboss-app>
+  <loader-repository>
+    jsfejb3:archive=jsfejb3.ear
+  </loader-repository>
+</jboss-app>
