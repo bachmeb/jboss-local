@@ -9,6 +9,7 @@
 * https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
 * http://markmail.org/thread/ldqdq7y37tgr5rcz
 * https://github.com/bachmeb/jsfejb3
+* http://stackoverflow.com/questions/10652912/jboss-5-1-server
 
 ##### Download and install JBoss
 * https://github.com/bachmeb/jboss-local
@@ -335,7 +336,7 @@ public class TodoDao implements TodoDaoInt {
 }
 ```
 
-##### Review the to do bean
+##### Review the backing bean
 ```java
 import javax.naming.InitialContext;
 import java.util.*;
@@ -395,6 +396,65 @@ public class TodoBean {
   }
 
 }
+```
+##### Review the application.xml file
+* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\application.xml
+```xml
+<application>
+  <display-name>Sample Todo</display-name>
+  <module>
+    <web>
+      <web-uri>app.war</web-uri>
+      <context-root>/jsfejb3</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>app.jar</ejb>
+  </module>
+</application>
+```
+
+##### Review the jboss-app.xml
+* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\jboss-app.xml
+```
+<jboss-app>
+  <loader-repository>
+    jsfejb3:archive=jsfejb3.ear
+  </loader-repository>
+</jboss-app>
+```
+
+##### Review the persistence.xml file
+* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\persistence.xml
+```
+<persistence>
+   <persistence-unit name="helloworld">
+      <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <jta-data-source>java:/DefaultDS</jta-data-source>
+      <properties>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+         <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+      </properties>
+   </persistence-unit>
+</persistence>
+```
+
+##### Review the Faces config file
+```
+//faces-config.xml
+<faces-config>
+  <application>
+    <view-handler>
+      com.sun.facelets.FaceletViewHandler
+    </view-handler>
+  </application>
+  <managed-bean>
+    <description>Dao</description>
+    <managed-bean-name>todoBean</managed-bean-name>
+    <managed-bean-class>TodoBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</faces-config>
 ```
 
 ##### Review the build.xml file
@@ -492,65 +552,16 @@ public class TodoBean {
 </project>
 ```
 
-##### Review the application.xml file
-* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\application.xml
-```xml
-<application>
-  <display-name>Sample Todo</display-name>
-  <module>
-    <web>
-      <web-uri>app.war</web-uri>
-      <context-root>/jsfejb3</context-root>
-    </web>
-  </module>
-  <module>
-    <ejb>app.jar</ejb>
-  </module>
-</application>
+##### Confirm the value of the JBOSS_HOME environment variable
 ```
+echo $JBOSS_HOME
+```
+```
+C:\DEV\jboss\eap\5.1.0\jboss-as
+`
 
-##### Review the jboss-app.xml
-* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\jboss-app.xml
-```
-<jboss-app>
-  <loader-repository>
-    jsfejb3:archive=jsfejb3.ear
-  </loader-repository>
-</jboss-app>
-```
 
-##### Review the persistence.xml file
-* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\persistence.xml
-```
-<persistence>
-   <persistence-unit name="helloworld">
-      <provider>org.hibernate.ejb.HibernatePersistence</provider>
-      <jta-data-source>java:/DefaultDS</jta-data-source>
-      <properties>
-         <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
-         <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
-      </properties>
-   </persistence-unit>
-</persistence>
-```
 
-##### Review the Faces config file
-```
-//faces-config.xml
-<faces-config>
-  <application>
-    <view-handler>
-      com.sun.facelets.FaceletViewHandler
-    </view-handler>
-  </application>
-  <managed-bean>
-    <description>Dao</description>
-    <managed-bean-name>todoBean</managed-bean-name>
-    <managed-bean-class>TodoBean</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-</faces-config>
-```
 
 
 ##### Download ant
