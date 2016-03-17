@@ -568,11 +568,7 @@ echo $JBOSS_HOME
 ```
 ```
 C:\DEV\jboss\eap\5.1.0\jboss-as
-`
-
-
-
-
+```
 
 ##### Download ant
 * http://ant.apache.org/bindownload.cgi
@@ -589,16 +585,43 @@ C:\DEV\jboss\eap\5.1.0\jboss-as
 * Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > PATH > Edit
 * Append the following: %ANT_HOME%\bin;
 
-##### Verify ant
-    ant version
-
 ##### Open a command prompt
 	* Start > Run > cmd
 
+##### Verify the ant version
+	ant version
+    
 ##### Build the project
-	cd $DEV\git\jboss-local\apps\jsfejb3
-	ant
+```
+cd $DEV\git\jboss-local\apps\jsfejb3
+ant
+```
+```c
+/*
+Buildfile: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml
 
+compile:
+    [javac] C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml:38: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 4 source files to C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\classes
+    [javac] Note: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDao.java uses unchecked or unsafe operations.
+    [javac] Note: Recompile with -Xlint:unchecked for details.
+
+war:
+    [mkdir] Created dir: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars
+      [war] Building war: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars\app.war
+
+ejb3jar:
+      [jar] Building jar: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars\app.jar
+
+ear:
+      [ear] Building ear: C:\DEV\git\bachmeb\jboss-local\apps\jsfejb3\build\jars\jsfejb3.ear
+
+main:
+
+BUILD SUCCESSFUL
+Total time: 14 seconds
+*/
+```
 ##### Examine the file structure of the EAR file
 ```
 jsfejb3.ear
