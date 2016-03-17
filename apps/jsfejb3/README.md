@@ -27,7 +27,7 @@
 * Copy to: $DEV\git\jboss-local\apps\jsfejb3
 
 ##### Review the Todo class
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\Todo.java
+* $DEV\git\jboss-local\apps\jsfejb3\src\Todo.java
 ```java
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -72,7 +72,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Review index.xhtml
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\index.xhtml
+* $DEV\git\jboss-local\apps\jsfejb3\view\index.xhtml
 ```html
 <!DOCTYPE html PUBLIC 
 	"-//W3C//DTD XHTML 1.0 Transitional//EN" 
@@ -106,7 +106,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Review create.xhtml
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\create.xhtml
+* $DEV\git\jboss-local\apps\jsfejb3\view\create.xhtml
 ```html
 <!DOCTYPE html PUBLIC 
 	"-//W3C//DTD XHTML 1.0 Transitional//EN" 
@@ -157,7 +157,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Create todos.xhtml
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\todos.xhtml
+* $DEV\git\jboss-local\apps\jsfejb3\view\todos.xhtml
 ```html
 <!DOCTYPE html PUBLIC 
 	"-//W3C//DTD XHTML 1.0 Transitional//EN" 
@@ -199,7 +199,7 @@ public class Todo implements Serializable {
 </html>
 ```
 ##### Review edit.xhtml
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\edit.xhtml
+* $DEV\git\jboss-local\apps\jsfejb3\view\edit.xhtml
 ```html
 <!DOCTYPE html PUBLIC
 	"-//W3C//DTD XHTML 1.0 Transitional//EN" 
@@ -255,7 +255,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Review style.css
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\view\style.css
+* $DEV\git\jboss-local\apps\jsfejb3\view\style.css
 ```css
 .error {
   color: red;
@@ -278,7 +278,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Review the DAO interface
-* DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDaoInt.java
+* DEV\git\jboss-local\apps\jsfejb3\src\TodoDaoInt.java
 ```java
 import java.util.List;
 
@@ -294,7 +294,7 @@ public interface TodoDaoInt {
 ```
 
 ##### Review the DAO class
-* DEV\git\bachmeb\jboss-local\apps\jsfejb3\src\TodoDao.java
+* DEV\git\jboss-local\apps\jsfejb3\src\TodoDao.java
 ```java
 import java.util.List;
 import javax.ejb.*;
@@ -333,7 +333,7 @@ public class TodoDao implements TodoDaoInt {
 ```
 
 ##### Review the build.xml file
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\build.xml
+* $DEV\git\jboss-local\apps\jsfejb3\build.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="HelloWorld" default="main" basedir=".">
@@ -431,7 +431,7 @@ public class TodoDao implements TodoDaoInt {
 	* Start > Run > cmd
 
 ##### Build the project
-	cd $DEV\git\bachmeb\jboss-local\apps\jsfejb3
+	cd $DEV\git\jboss-local\apps\jsfejb3
 	ant
 
 ##### Examine the file structure of the EAR file
@@ -463,7 +463,7 @@ jsfejb3.ear
 ```
 
 ##### Review the application.xml file
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\resources\META-INF\application.xml
+* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\application.xml
 ```xml
 <application>
   <display-name>Sample Todo</display-name>
@@ -480,7 +480,7 @@ jsfejb3.ear
 ```
 
 ##### Review the jboss-app.xml
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\resources\META-INF\jboss-app.xml
+* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\jboss-app.xml
 ```
 <jboss-app>
   <loader-repository>
@@ -490,7 +490,7 @@ jsfejb3.ear
 ```
 
 ##### Review the persistence.xml file
-* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\resources\META-INF\persistence.xml
+* $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\persistence.xml
 ```
 <persistence>
    <persistence-unit name="helloworld">
