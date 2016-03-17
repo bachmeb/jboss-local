@@ -281,7 +281,7 @@ public class Todo implements Serializable {
 ```
 
 ##### Review the DAO interface
-* DEV\git\jboss-local\apps\jsfejb3\src\TodoDaoInt.java
+* $DEV\git\jboss-local\apps\jsfejb3\src\TodoDaoInt.java
 ```java
 import java.util.List;
 
@@ -297,7 +297,7 @@ public interface TodoDaoInt {
 ```
 
 ##### Review the DAO class
-* DEV\git\jboss-local\apps\jsfejb3\src\TodoDao.java
+* $DEV\git\jboss-local\apps\jsfejb3\src\TodoDao.java
 
 *[The @PersistenceContext annotation tells the JBoss Server to inject an entity manager during deployment.](http://docs.jboss.org/jbossas/docs/Getting_Started_Guide/beta422/html/Sample_JSF_EJB3_Application-EJB3_Session_Beans.html)*
 ```java
@@ -338,6 +338,7 @@ public class TodoDao implements TodoDaoInt {
 ```
 
 ##### Review the backing bean
+* $DEV\git\jboss-local\apps\jsfejb3\src\TodoBean.java
 ```java
 import javax.naming.InitialContext;
 import java.util.*;
@@ -415,7 +416,7 @@ public class TodoBean {
 </application>
 ```
 
-##### Review the jboss-app.xml
+##### Review the jboss-app.xml file
 * $DEV\git\jboss-local\apps\jsfejb3\resources\META-INF\jboss-app.xml
 ```
 <jboss-app>
@@ -441,8 +442,8 @@ public class TodoBean {
 ```
 
 ##### Review the Faces config file
+* $DEV\git\bachmeb\jboss-local\apps\jsfejb3\resources\WEB-INF\faces-confg.xml
 ```
-//faces-config.xml
 <faces-config>
   <application>
     <view-handler>
