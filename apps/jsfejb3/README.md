@@ -10,6 +10,7 @@
 * http://markmail.org/thread/ldqdq7y37tgr5rcz
 * https://github.com/bachmeb/jsfejb3
 * http://stackoverflow.com/questions/10652912/jboss-5-1-server
+* https://developer.jboss.org/thread/149783?tstart=0
 
 ##### Download and install JBoss
 * https://github.com/bachmeb/jboss-local
@@ -550,6 +551,15 @@ public class TodoBean {
 		<delete file="${jboss.deploy}/${projname}.ear" />
 	</target>
 </project>
+```
+##### Update build.xml 
+*This line...*
+```xml
+	<property name="jsflib" location="${jboss.home}/server/default/deploy/jboss-web.deployer/jsf-libs" />
+```
+*...should be.*
+```xml
+	<property name="jsflib" location="${jboss.home}/server/default/deploy/jbossweb.sar/jsf-libs" />
 ```
 
 ##### Confirm the value of the JBOSS_HOME environment variable
