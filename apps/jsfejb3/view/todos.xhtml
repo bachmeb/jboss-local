@@ -1,35 +1,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:h="http://java.sun.com/jsf/html"
-          xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 
-<body>
+	<body>
 
-<h2>The Todo List</h2>
+		<h2>The Todo List</h2>
 
-<h:form>
+		<h:form>
 
-<h:dataTable value="#{todoBean.todos}" var="todo">
-  <h:column>
-    <f:facet name="header">Title</f:facet>
-    #{todo.title}
-  </h:column>
-  <h:column>
-    <f:facet name="header">Description</f:facet>
-    #{todo.description}
-  </h:column>
-  <h:column>
-    <a href="edit.faces?tid=#{todo.id}">Edit</a>
-  </h:column>
-</h:dataTable>
+			<h:dataTable value="#{todoBean.todos}" var="todo">
+				<h:column>
+					<f:facet name="header">Title</f:facet>
+					#{todo.title}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Description</f:facet>
+					#{todo.description}
+				</h:column>
+				<h:column>
+					<a href="edit.faces?tid=#{todo.id}">Edit</a>
+				</h:column>
+			</h:dataTable>
 
-<center>
-  <h:commandButton action="create"
-            value="Create New Todo" type="submit"/>
-</center>
+			<center>
+				<h:commandButton action="create"
+				value="Create New Todo" type="submit"/>
+			</center>
 
-</h:form>
+		</h:form>
 
-</body>
+	</body>
 </html>

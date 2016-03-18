@@ -1,48 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:h="http://java.sun.com/jsf/html"
-          xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 
-<head>
- <link href="style.css" rel="stylesheet" type="text/css"/>
-</head>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
 
-<body>
-<h2>Edit #{todoBean.todo.title}</h2>
+	<body>
+		<h2>Edit #{todoBean.todo.title}</h2>
 
-<h:form id="edit">
-  
-<input type="hidden" name="tid" value="#{todoBean.todo.id}"/>
+		<h:form id="edit">
 
-<table>
+			<input type="hidden" name="tid" value="#{todoBean.todo.id}"/>
 
-  <tr>
-    <td>Title:</td>
-    <td>
-      <h:inputText id="title" value="#{todoBean.todo.title}" size="15">
-        <f:validateLength minimum="2"/>
-      </h:inputText>
-    </td>
-  </tr>
+			<table>
 
-  <tr>
-    <td>Description:</td>
-    <td>
-      <h:inputTextarea id="description" value="#{todoBean.todo.description}">
-        <f:validateLength minimum="2" maximum="250"/>
-      </h:inputTextarea>
-    </td>
-  </tr>
+				<tr>
+					<td>Title:</td>
+					<td>
+						<h:inputText id="title" value="#{todoBean.todo.title}" size="15">
+						<f:validateLength minimum="2"/>
+						</h:inputText>
+					</td>
+				</tr>
 
-</table>
+				<tr>
+					<td>Description:</td>
+					<td>
+						<h:inputTextarea id="description" value="#{todoBean.todo.description}">
+						<f:validateLength minimum="2" maximum="250"/>
+						</h:inputTextarea>
+					</td>
+				</tr>
 
-<h:commandButton type="submit" id="update" value="Update"
-                 action="#{todoBean.update}"/>
-&nbsp;
-<h:commandButton type="submit" id="delete" value="Delete"
-                 action="#{todoBean.delete}"/>
-</h:form>
+			</table>
 
-</body>
+			<h:commandButton type="submit" id="update" value="Update"
+			action="#{todoBean.update}"/>
+			&nbsp;
+			<h:commandButton type="submit" id="delete" value="Delete"
+			action="#{todoBean.delete}"/>
+		</h:form>
+
+	</body>
 </html>

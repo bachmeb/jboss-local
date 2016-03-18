@@ -3,9 +3,14 @@ import java.util.*;
 import javax.faces.model.*;
 import javax.faces.context.*;
 
+@Stateful
 public class TodoBean {
 
   private Todo todo;
+  
+  public String message;
+  
+  public int count = 0;
 
   public TodoBean () {
     FacesContext fc = FacesContext.getCurrentInstance();
@@ -16,6 +21,8 @@ public class TodoBean {
     } else {
       todo = new Todo ();
     }
+	
+	message = new String("HELLO");
   }
 
   private TodoDaoInt getDao () {
@@ -33,6 +40,18 @@ public class TodoBean {
     return "persisted";
   }
 
+   
+  public String generateLoad () {
+    
+	System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+	
+	count++;
+	
+	message = ""+count;
+	
+    return "loaded";
+  }
+  
   public DataModel getTodos () {
     return (new ListDataModel (getDao().findTodos()));
   }
@@ -45,6 +64,13 @@ public class TodoBean {
     this.todo = todo;
   }
 
+  public String getMessage () {
+    return message;
+  }
+
+  public void setMessage (String mess) {
+    this.message = mess;
+  }
   public String delete () {
     getDao().delete( todo );
     return "removed";
