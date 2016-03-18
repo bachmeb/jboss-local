@@ -51,6 +51,248 @@ java -version
   * Variable name: JBOSS_HOME
   * Variable value: $DEV\jboss\eap\5.1.0\jboss-as
 
+##### Break up the JAVA_OPTS assignments and add pause statements to run.conf.bat
+```bat
+rem ### -*- batch file -*- ######################################################
+rem #                                                                          ##
+rem #  JBoss Bootstrap Script Configuration                                    ##
+rem #                                                                          ##
+rem #############################################################################
+
+rem # $Id: run.conf.bat 102595 2010-03-18 22:14:39Z rrajesh $
+
+rem #
+rem # This batch file is executed by run.bat to initialize the environment 
+rem # variables that run.bat uses. It is recommended to use this file to
+rem # configure these variables, rather than modifying run.bat itself. 
+rem #
+
+echo JAVA_OPTS: %JAVA_OPTS%
+pause 
+if not "x%JAVA_OPTS%" == "x" goto JAVA_OPTS_SET
+
+rem #
+rem # Specify the JBoss Profiler configuration file to load.
+rem #
+rem # Default is to not load a JBoss Profiler configuration file.
+rem #
+rem set "PROFILER=%JBOSS_HOME%\bin\jboss-profiler.properties"
+
+rem #
+rem # Specify the location of the Java home directory (it is recommended that
+rem # this always be set). If set, then "%JAVA_HOME%\bin\java" will be used as
+rem # the Java VM executable; otherwise, "%JAVA%" will be used (see below).
+rem #
+rem set "JAVA_HOME=C:\opt\jdk1.6.0_13"
+set "JAVA_HOME=C:\DEV\java\6\64\jdk1.6.0_45"
+echo JAVA_HOME: %JAVA_HOME%
+pause 
+
+rem #
+rem # Specify the exact Java VM executable to use - only used if JAVA_HOME is
+rem # not set. Default is "java".
+rem #
+rem set "JAVA=C:\opt\jdk1.6.0_13\bin\java"
+
+rem #
+rem # Specify options to pass to the Java VM. Note, there are some additional
+rem # options that are always passed by run.bat.
+rem #
+
+echo JAVA_OPTS: %JAVA_OPTS%
+pause 
+
+set "JAVA_OPTS="
+
+rem # JVM memory allocation pool parameters - modify as appropriate.
+
+rem # -Xms: Initial heap size
+set "JAVA_OPTS=%JAVA_OPTS% -Xms1024m"
+
+rem # -Xmx: Maximum java heap size
+set "JAVA_OPTS=%JAVA_OPTS% -Xmx1024m"
+
+rem # -XX:MaxPermSize: Maximum java permanent space size
+set "JAVA_OPTS=%JAVA_OPTS% -XX:MaxPermSize=256m"
+
+rem # -
+set "JAVA_OPTS=%JAVA_OPTS% -Dsun.lang.ClassLoader.allowArraySyntax=true"
+
+rem # -XX:+UseParallelOldGC: 
+rem # set "JAVA_OPTS=%JAVA_OPTS% -XX:+UseParallelOldGC"
+
+rem # -XX:+UseLargePages: 
+rem # set "JAVA_OPTS=%JAVA_OPTS% -XX:+UseLargePages"
+
+rem # Reduce the RMI GCs to once per hour for Sun JVMs.
+set "JAVA_OPTS=%JAVA_OPTS% -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000"
+
+rem # Warn when resolving remote XML DTDs or schemas.
+set "JAVA_OPTS=%JAVA_OPTS% -Dorg.jboss.resolver.warning=true"
+
+rem # Sample JPDA settings for remote socket debugging
+rem set "JAVA_OPTS=%JAVA_OPTS% -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
+
+rem # Sample JPDA settings for shared memory debugging 
+rem set "JAVA_OPTS=%JAVA_OPTS% -Xrunjdwp:transport=dt_shmem,address=jboss,server=y,suspend=n"
+
+:JAVA_OPTS_SET
+
+echo JAVA_OPTS: %JAVA_OPTS%
+pause 
+
+```
+
+##### Add a pause statement to run.bat
+```bat
+@echo off
+rem -------------------------------------------------------------------------
+rem JBoss Bootstrap Script for Windows
+rem -------------------------------------------------------------------------
+
+rem $Id: run.bat 105675 2010-06-03 17:10:14Z permaine $
+
+@if not "%ECHO%" == ""  echo %ECHO%
+@if "%OS%" == "Windows_NT" setlocal
+
+if "%OS%" == "Windows_NT" (
+  set "DIRNAME=%~dp0%"
+) else (
+  set DIRNAME=.\
+)
+
+rem Read an optional configuration file.
+if "x%RUN_CONF%" == "x" (
+   set "RUN_CONF=%DIRNAME%run.conf.bat"
+)
+if exist "%RUN_CONF%" (
+   echo Calling %RUN_CONF%
+   call "%RUN_CONF%" %*
+) else (
+   echo Config file not found %RUN_CONF%
+)
+
+pushd %DIRNAME%..
+if "x%JBOSS_HOME%" == "x" (
+  set "JBOSS_HOME=%CD%"
+)
+popd
+
+set DIRNAME=
+
+if "%OS%" == "Windows_NT" (
+  set "PROGNAME=%~nx0%"
+) else (
+  set "PROGNAME=run.bat"
+)
+
+rem Setup JBoss specific properties
+set JAVA_OPTS=%JAVA_OPTS% -Dprogram.name=%PROGNAME%
+
+if "x%JAVA_HOME%" == "x" (
+  set  JAVA=java
+  echo JAVA_HOME is not set. Unexpected results may occur.
+  echo Set JAVA_HOME to the directory of your local JDK to avoid this message.
+) else (
+  set "JAVA=%JAVA_HOME%\bin\java"
+  if exist "%JAVA_HOME%\lib\tools.jar" (
+    set "JAVAC_JAR=%JAVA_HOME%\lib\tools.jar"
+  )
+)
+
+rem Add -server to the JVM options, if supported
+"%JAVA%" -server -version 2>&1 | findstr /I hotspot > nul
+if not errorlevel == 1 (
+  set "JAVA_OPTS=%JAVA_OPTS% -server"
+)
+
+rem Add native to the PATH if present
+set JBOSS_NATIVE_HOME=
+set CHECK_NATIVE_HOME=
+if exist "%JBOSS_HOME%\bin\libtcnative-1.dll" (
+  set "CHECK_NATIVE_HOME=%JBOSS_HOME%\bin"
+) else if exist "%JBOSS_HOME%\..\native\bin" (
+  set "CHECK_NATIVE_HOME=%JBOSS_HOME%\..\native\bin"
+) else if exist "%JBOSS_HOME%\bin\native\bin" (
+  set "CHECK_NATIVE_HOME=%JBOSS_HOME%\bin\native\bin"
+) else if exist "%JBOSS_HOME%\..\..\jboss-ep-5.1\native\bin" (
+  set "CHECK_NATIVE_HOME=%JBOSS_HOME%\..\..\jboss-ep-5.1\native\bin"
+)
+if "x%CHECK_NATIVE_HOME%" == "x" goto WITHOUT_JBOSS_NATIVE
+
+rem Translate to the absolute path
+
+pushd "%CHECK_NATIVE_HOME%"
+set JBOSS_NATIVE_HOME=%CD%
+popd
+set CHECK_JBOSS_NATIVE_HOME=
+set JAVA_OPTS=%JAVA_OPTS% "-Djava.library.path=%JBOSS_NATIVE_HOME%;%PATH%;%SYSTEMROOT%"
+set PATH=%JBOSS_NATIVE_HOME%;%PATH%;%SYSTEMROOT%
+
+:WITHOUT_JBOSS_NATIVE
+rem Find run.jar, or we can't continue
+
+if exist "%JBOSS_HOME%\bin\run.jar" (
+  if "x%JAVAC_JAR%" == "x" (
+    set "RUNJAR=%JBOSS_HOME%\bin\run.jar"
+  ) else (
+    set "RUNJAR=%JAVAC_JAR%;%JBOSS_HOME%\bin\run.jar"
+  )
+) else (
+  echo Could not locate "%JBOSS_HOME%\bin\run.jar".
+  echo Please check that you are in the bin directory when running this script.
+  goto END
+)
+
+rem If JBOSS_CLASSPATH empty, don't include it, as this will
+rem result in including the local directory in the classpath, which makes
+rem error tracking harder.
+if "x%JBOSS_CLASSPATH%" == "x" (
+  set "RUN_CLASSPATH=%RUNJAR%"
+) else (
+  set "RUN_CLASSPATH=%JBOSS_CLASSPATH%;%RUNJAR%"
+)
+
+set JBOSS_CLASSPATH=%RUN_CLASSPATH%
+
+rem Setup JBoss specific properties
+
+rem Setup the java endorsed dirs
+set JBOSS_ENDORSED_DIRS=%JBOSS_HOME%\lib\endorsed
+
+echo ===============================================================================
+echo.
+echo   JBoss Bootstrap Environment
+echo.
+echo   JBOSS_HOME: %JBOSS_HOME%
+echo.
+echo   JAVA: %JAVA%
+echo.
+echo   JAVA_OPTS: %JAVA_OPTS%
+echo.
+echo   CLASSPATH: %JBOSS_CLASSPATH%
+echo.
+echo ===============================================================================
+echo.
+
+rem read the JBoss Bootstrap Environment details
+pause
+
+:RESTART
+"%JAVA%" %JAVA_OPTS% ^
+   -Djava.endorsed.dirs="%JBOSS_ENDORSED_DIRS%" ^
+   -classpath "%JBOSS_CLASSPATH%" ^
+   org.jboss.Main %*
+
+if ERRORLEVEL 10 goto RESTART
+
+:END
+if "x%NOPAUSE%" == "x" pause
+
+:END_NO_PAUSE
+
+```
+
 ##### Start JBoss from the Windows command line
 	$JBOSS_HOME\bin\run.bat
 ```
