@@ -861,5 +861,8 @@ BUILD SUCCESSFUL
 Total time: 0 seconds
 */
 ```
-##### Setup a local MySQL server
-* https://github.com/bachmeb/mysql-local
+
+##### Test the application
+* http://localhost:8080/jsfejb3/
+
+
