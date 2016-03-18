@@ -51,7 +51,7 @@ java -version
   * Variable name: JBOSS_HOME
   * Variable value: $DEV\jboss\eap\5.1.0\jboss-as
 
-##### Break up the JAVA_OPTS assignments and add pause statements to run.conf.bat
+##### Set JAVA_HOME, break up the JAVA_OPTS assignments, and add pause statements to run.conf.bat
 ```bat
 rem ### -*- batch file -*- ######################################################
 rem #                                                                          ##
