@@ -15,6 +15,7 @@
 * https://developer.jboss.org/thread/159203?tstart=0
 * http://ant.apache.org/manual/Tasks/copy.html
 * http://ant.apache.org/manual/Tasks/move.html
+* http://stackoverflow.com/questions/4597968/how-to-recompile-with-xlintunchecked-in-ant-build-task
 
 ##### Download and install JBoss
 * https://github.com/bachmeb/jboss-local
