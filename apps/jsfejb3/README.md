@@ -635,6 +635,30 @@ echo $JBOSS_HOME
 C:\DEV\jboss\eap\5.1.0\jboss-as
 ```
 
+##### Update build.xml so that TodoBean.class is placed in 'WEB-INF/classes' in app.war instead of at the top level of the war file
+```xml
+	<target name="war" depends="compile">
+		<mkdir dir="${build.jars}" />
+		<mkdir dir="${resources}/WEB-INF/classes" />
+		
+		<war destfile="${build.jars}/app.war" webxml="${resources}/WEB-INF/web.xml">
+			
+			<fileset dir="${resources}/WEB-INF/classes">
+				<include name="TodoBean.class" />
+			</fileset>
+			
+			<webinf dir="${resources}/WEB-INF">
+				<include name="faces-config.xml" />
+				<include name="navigation.xml" />
+			</webinf>
+			<lib dir="${seamlib}/lib">
+				<include name="jsf-facelets.jar" />
+			</lib>
+			<fileset dir="${view}" />
+		</war>
+	</target>
+```
+
 ##### Download ant
 * http://ant.apache.org/bindownload.cgi
 
