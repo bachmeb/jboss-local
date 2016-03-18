@@ -641,16 +641,20 @@ C:\DEV\jboss\eap\5.1.0\jboss-as
 ```xml
 	<target name="war" depends="compile">
 		<mkdir dir="${build.jars}" />
-		<mkdir dir="${resources}/WEB-INF/classes" />
-		<copy file="${build.classes}/TodoBean.class" todir="${resources}/WEB-INF/classes"/>
+		<mkdir dir="${build.classes}/WEB-INF/classes" />
+		<move file="${build.classes}/TodoBean.class" todir="${build.classes}/WEB-INF/classes"/>
 		
 		<war destfile="${build.jars}/app.war" webxml="${resources}/WEB-INF/web.xml">
+			
+			<fileset dir="${build.classes}">
+				<include name="WEB-INF/classes/TodoBean.class" />
+			</fileset>
 			
 			<webinf dir="${resources}/WEB-INF">
 				<include name="faces-config.xml" />
 				<include name="navigation.xml" />
-				<include name="classes/TodoBean.class" />
 			</webinf>
+			
 			<lib dir="${seamlib}/lib">
 				<include name="jsf-facelets.jar" />
 			</lib>
