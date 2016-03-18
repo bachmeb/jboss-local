@@ -20,7 +20,7 @@
 ##### Download the Application Platform 4.3.0.GA_CP09 documentation
 * https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=appplatform&version=4.3.0.GA_CP09
 
-##### Unpack the contents of jboss-eap-docs-4.3.0.GA_CP09 to
+##### Use 7-zip to unpack the contents of jboss-eap-docs-4.3.0.GA_CP09. Do not use Windows Explorer. Extract the files to:
 * $DEV\jboss\eap\4.3
 
 ##### Create a project directory
