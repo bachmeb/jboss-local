@@ -41,7 +41,7 @@ java -version
 ##### Download Application Platform 5.1.0 Binary (jboss-eap-5.1.0.zip)
 * https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=4063&product=appplatform&version=5.1.0&downloadType=distributions
 
-##### Use 7-zip to unpack the contents of jboss-eap-5.1.0.zip. 
+##### Use 7-zip to unpack the contents of jboss-eap-5.1.0.zip
 *Do not use Windows Explorer!*
 
 * Target: $DEV\jboss\eap\5.1.0
