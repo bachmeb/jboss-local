@@ -12,6 +12,7 @@
 * http://stackoverflow.com/questions/10652912/jboss-5-1-server
 * https://developer.jboss.org/thread/149783?tstart=0
 * http://stackoverflow.com/questions/5103384/ant-warning-includeantruntime-was-not-set
+* https://developer.jboss.org/thread/159203?tstart=0
 
 ##### Download and install JBoss
 * https://github.com/bachmeb/jboss-local
@@ -493,6 +494,15 @@ public class TodoBean {
       </properties>
    </persistence-unit>
 </persistence>
+```
+
+##### Update the root element in persistence.xml to include a xmlns declaration
+```xml
+  <persistence
+    xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+    version="1.0">  
 ```
 
 ##### Review the Faces config file
