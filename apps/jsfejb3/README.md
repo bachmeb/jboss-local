@@ -14,6 +14,7 @@
 * http://stackoverflow.com/questions/5103384/ant-warning-includeantruntime-was-not-set
 * https://developer.jboss.org/thread/159203?tstart=0
 * http://ant.apache.org/manual/Tasks/copy.html
+* http://ant.apache.org/manual/Tasks/move.html
 
 ##### Download and install JBoss
 * https://github.com/bachmeb/jboss-local
