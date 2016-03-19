@@ -723,8 +723,7 @@ Total time: 14 seconds
 		<javac destdir="${build.classes}" 
 			classpathref="lib.classpath" 
 			debug="true"
-			includeantruntime="false"
-			>
+			includeantruntime="false">
 			<src path="${src}" />
 		</javac>
 ```
