@@ -24,10 +24,9 @@ In this tutorial $DEV refers to /Users/b/DEV on my system. For consistency, you 
 ##### Unpack the contents of jboss-eap-5.1.0.zip
 * Target: $DEV/jboss/eap/5.1.0
 
+<!--
 ##### Set JBOSS_HOME 
-* Start > Control Panel > System > Advanced System Settings > Environment Variables > User variables > New
-  * Variable name: JBOSS_HOME
-  * Variable value: $DEV\jboss\eap\5.1.0\jboss-as
+-->
 
 ##### Change JAVA="$JAVA_HOME/bin/java" to JAVA="$JAVA_HOME/java" in run.conf
 ```bash
@@ -555,12 +554,12 @@ Brians-MacBook-Air:bin b$ ./run.sh
 * http://localhost:8080/
 
 ##### Enable the admin username and password for the JBoss EAP Admin Console
-* Edit $DEV\jboss\eap\5.1.0\jboss-as\server\default\deploy\management\console-mgr.sar\web-console.war\WEB-INF\classes\web-console-users.properties
+* Edit $DEV/jboss/eap/5.1.0/jboss-as/server/default/deploy/management/console-mgr.sar/web-console.war/WEB-INF/classes/web-console-users.properties
 ```
 # A sample users.properties file for use with the UsersRolesLoginModule
 admin=admin
 ```
-* Edit $DEV\jboss\eap\5.1.0\jboss-as\server\default\conf\props\jmx-console-users.properties
+* Edit $DEV/jboss/eap/5.1.0/jboss-as/server/default/conf/props/jmx-console-users.properties
 ```
 # A sample users.properties file for use with the UsersRolesLoginModule
 admin=admin
@@ -570,7 +569,7 @@ admin=admin
 	ctrl-c
 
 ##### Restart JBoss
-	$JBOSS_HOME\bin\run.bat
+	$JBOSS_HOME/bin/run.bat
 
 ##### Go to the admin console
 * http://localhost:8080/admin-console/
