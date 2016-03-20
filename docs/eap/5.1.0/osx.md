@@ -28,7 +28,8 @@ In this tutorial $DEV refers to /Users/b/DEV on my system. For consistency, you 
 ##### Set JBOSS_HOME 
 -->
 
-##### Change JAVA="$JAVA_HOME/bin/java" to JAVA="$JAVA_HOME/java" in run.conf
+##### Set JAVA_HOME in run.conf
+* JAVA_HOME="/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Commands/"
 ```bash
 ## -*- shell-script -*- ######################################################
 ##                                                                          ##
@@ -88,7 +89,7 @@ fi
 #JAVA_OPTS="$JAVA_OPTS -Xrunjdwp:transport=dt_shmem,address=jboss,server=y,suspend=n"
 ```
 
-##### 
+##### Change JAVA="$JAVA_HOME/bin/java" to JAVA="$JAVA_HOME/java" in run.conf
 ```bash
 #!/bin/sh
 ### ====================================================================== ###
