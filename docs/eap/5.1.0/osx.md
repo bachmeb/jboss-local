@@ -30,6 +30,8 @@ In this tutorial $DEV refers to /Users/b/DEV on my system. For consistency, you 
 
 ##### Set JAVA_HOME and JAVA in run.conf
 * JAVA_HOME="/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Commands/"
+* JAVA="/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Commands/java"
+
 ```bash
 ## -*- shell-script -*- ######################################################
 ##                                                                          ##
