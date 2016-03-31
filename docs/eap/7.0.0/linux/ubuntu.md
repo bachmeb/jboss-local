@@ -3,7 +3,7 @@
 ## References
 * http://blog.eisele.net/2015/11/getting-started-with-eap-7-alpha-and.html
 
-In this tutorial $DEV refers to /home/bachmeb/DEV on my system. For consistency, you can choose any folder you like to be your DEV folder. 
+In this tutorial $DEV refers to /home/bachmeb/DEV on my system. For consistency, you can choose any directory you like to be your DEV directory. 
 
 ##### Download and install Java JDK 1.8
 * https://github.com/bachmeb/java-jdk/
