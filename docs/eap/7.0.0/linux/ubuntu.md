@@ -49,12 +49,11 @@ nano DEV/jboss/eap/7.0.0/bin/standalone.sh
 * http://localhost:8080/
 
 ##### Enable the admin username and password for the JBoss EAP Admin Console
-* Edit $DEV/jboss/eap/5.1.0/jboss-as/server/default/deploy/management/console-mgr.sar/web-console.war/WEB-INF/classes/web-console-users.properties
 ```
 # A sample users.properties file for use with the UsersRolesLoginModule
 admin=admin
 ```
-* Edit $DEV/jboss/eap/5.1.0/jboss-as/server/default/conf/props/jmx-console-users.properties
+
 ```
 # A sample users.properties file for use with the UsersRolesLoginModule
 admin=admin
@@ -64,7 +63,9 @@ admin=admin
 	ctrl-c
 
 ##### Restart JBoss
-	$JBOSS_HOME/bin/run.bat
+```
+$JBOSS_HOME/bin/run.bat
+```
 
 ##### Go to the admin console
 * http://localhost:8080/admin-console/
