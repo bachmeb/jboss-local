@@ -6,7 +6,7 @@
 In this tutorial $DEV refers to /home/bachmeb/DEV on my system. For consistency, you can choose any folder you like to be your DEV folder. 
 
 ##### Download and install the Java JDK 
-* https://github.com/bachmeb/java-jdk/
+* https://github.com/bachmeb/java-jdk/blob/master/docs/linux/ubuntu
 
 ##### Login to Red Hat
 * http://access.redhat.com
