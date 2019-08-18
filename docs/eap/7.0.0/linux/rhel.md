@@ -31,10 +31,22 @@ vi [JBoss Home]/standalone/configuration/standalone.xml
 ```
 /<interfaces
 ```
+Change this...
+```
+    <interfaces>
+        <interface name="management">
+            <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
+        </interface>
+        <interface name="public">
+            <inet-address value="${jboss.bind.address:127.0.0.1}"/>
+        </interface>
+    </interfaces>
+```
+...to this: 
 ```
 <interfaces>
     <interface name="management">
-        <inet-address value="127.0.0.1"/>
+        <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
     </interface>
     <interface name="public">
         <any-address/>
