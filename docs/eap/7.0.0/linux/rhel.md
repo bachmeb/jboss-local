@@ -17,8 +17,15 @@ Login to redhat.com and download the EAP 7.0.0 installer jar.
 ```
 java -jar jboss-eap-7.0.0-installer.jar
 ```
+Choose a directory for the installation, like /opt/jboss/EAP-7.0.0
 
 ### Configure
+Create a symbolic link to jboss home from the home directory of the jboss user
+```
+sudo su -l jboss
+pwd
+ln -s /opt/jboss/EAP-7.0.0/ jboss-home
+```
 Read standalone.xml
 ```
 cat {JBOSS_HOME}/standalone/configuration/standalone.xml
