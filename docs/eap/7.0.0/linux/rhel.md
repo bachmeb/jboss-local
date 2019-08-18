@@ -28,7 +28,7 @@ ln -s /opt/jboss/EAP-7.0.0/ jboss-home
 ```
 Read standalone.xml
 ```
-cat {JBOSS_HOME}/standalone/configuration/standalone.xml
+cat [JBOSS HOME]/standalone/configuration/standalone.xml
 ```
 Tell JBoss to listen for traffic on any network interface
 * https://stackoverflow.com/questions/6853409/binding-jboss-as-7-to-all-interfaces
