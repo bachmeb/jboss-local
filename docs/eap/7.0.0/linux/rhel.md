@@ -19,4 +19,7 @@ java -jar jboss-eap-7.0.0-installer.jar
 ```
 
 ### Configure
-
+Read standalone.xml
+```
+cat {JBOSS_HOME}/standalone/configuration/standalone.xml
+```
