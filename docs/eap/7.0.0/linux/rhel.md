@@ -23,3 +23,21 @@ Read standalone.xml
 ```
 cat {JBOSS_HOME}/standalone/configuration/standalone.xml
 ```
+Tell JBoss to listen for traffic on any network interface
+* https://stackoverflow.com/questions/6853409/binding-jboss-as-7-to-all-interfaces
+```
+vi [JBoss Home]/standalone/configuration/standalone.xml
+```
+```
+/<interfaces
+```
+```
+<interfaces>
+    <interface name="management">
+        <inet-address value="127.0.0.1"/>
+    </interface>
+    <interface name="public">
+        <any-address/>
+    </interface>
+</interfaces>
+```
