@@ -60,3 +60,15 @@ Change this...
     </interface>
 </interfaces>
 ```
+Start JBoss
+```
+nohup [jboss home]/bin/standalone.sh & > ~/nohup.out
+```
+Monitor the output in nohup.out
+```
+tail -f ~/nohup.out
+```
+
+
+
+
