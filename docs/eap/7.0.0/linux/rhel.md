@@ -68,6 +68,8 @@ Monitor the output in nohup.out
 ```
 tail -f ~/nohup.out
 ```
+Go to the Administration Console
+* [app server address]:8080
 
 
 
