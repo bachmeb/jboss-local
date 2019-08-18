@@ -83,7 +83,6 @@ Stop JBoss
 ```
 $JBOSS_HOME/bin/jboss-cli.sh --connect command=:shutdown
 ```
-
 Bind management-http to the public interface
 ```
 vi $JBOSS_HOME/standalone/configuration/standalone.xml
@@ -102,8 +101,9 @@ Monitor the output in nohup.out
 ```
 tail -f ~/nohup.out
 ```
-Go to the Administration Console
+Go to the JBoss EAP 7 Welcome page
 * http://localhost:8080
 
-Login
+Login to the Administration Console
+* http://10.158.160.52:9990/console/App.html
 
