@@ -7,4 +7,5 @@
   * [win7 64-bit](docs/eap/5.1.0/win7/x64.md)
 
 * EAP 7.0.0
- * [ubuntu linux](/docs/eap/7.0.0/linux/ubuntu.md)
+  * [ubuntu linux](/docs/eap/7.0.0/linux/ubuntu.md)
+  * [red hat enterprise linux](/docs/eap/7.0.0/linux/rhel.md)
