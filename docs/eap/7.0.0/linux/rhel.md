@@ -69,8 +69,21 @@ Monitor the output in nohup.out
 tail -f ~/nohup.out
 ```
 Go to the Administration Console
-* [app server address]:8080
+* http://localhost:8080
 
+Stop JBoss
+```
+[jboss home]/bin/jboss-cli.sh --connect command=:shutdown
+```
 
-
+Bind management-http to the public interface
+```
+vi [JBoss Home]/standalone/configuration/standalone.xml
+```
+```
+/<socket-binding-group
+```
+```
+<socket-binding name="management-http" interface="public" port="${jboss.management.http.port:9990}"/>
+```
 
